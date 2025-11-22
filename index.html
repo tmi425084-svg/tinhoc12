@@ -112,6 +112,32 @@
     color: #0056b3;
     transform: translateY(-2px); /* nổi lên 1 chút */
 }
+.course-list-container {
+    /* Thiết lập độ rộng tối đa của khung chứa */
+    max-width: 600px;
+    margin: 20px auto;
+    
+    /* Thiết lập chia thành 2 cột */
+    column-count: 2;
+    
+    /* Khoảng cách giữa các cột */
+    column-gap: 30px; 
+}
+
+/* Tùy chỉnh kiểu cho mỗi bài học */
+.lesson-item {
+    /* Đảm bảo mỗi bài học không bị chia cắt giữa các cột */
+    break-inside: avoid-column;
+    margin-bottom: 10px;
+    /* Thêm các kiểu khác cho bài học như padding, border... */
+}
+
+/* Tùy chỉnh kiểu cho tiêu đề Danh sách Bài Học */
+h2 { /* Giả sử bạn dùng thẻ h2 cho tiêu đề */
+    /* Đảm bảo tiêu đề chỉ nằm ở cột đầu tiên (phía trên) */
+    column-span: all;
+    text-align: center;
+}
     </style>
 </head>
 <body>
@@ -164,4 +190,3 @@
     </ul>
 </section>
 </html>
-
