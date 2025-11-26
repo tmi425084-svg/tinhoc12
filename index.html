@@ -6,128 +6,6 @@
     <title>Thành viên nhóm 5</title>
 
     <style>
-        <!-- =============== PROFILE POPUP  =============== -->
-<div id="profilePopup" class="popup">
-    <div class="popup-content">
-        <span class="close" onclick="closeProfile()">&times;</span>
-
-        <img id="pImg" src="" alt="Profile" />
-        <h2 id="pName"></h2>
-
-        <p><strong>Ngày sinh:</strong> <span id="pBirth"></span></p>
-        <p><strong>Email:</strong> <span id="pEmail"></span></p>
-        <p><strong>Châm ngôn yêu thích:</strong></p>
-        <p id="pQuote" style="font-style: italic;"></p>
-    </div>
-</div>
-
-<style>
-    .popup {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.5);
-        justify-content: center;
-        align-items: center;
-    }
-
-    .popup-content {
-        background: #fff;
-        width: 90%;
-        max-width: 450px;
-        padding: 25px;
-        border-radius: 12px;
-        text-align: center;
-    }
-
-    .popup-content img {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 15px;
-    }
-
-    .close {
-        position: absolute;
-        right: 25px;
-        top: 15px;
-        font-size: 28px;
-        cursor: pointer;
-    }
-</style>
-
-<script>
-    // DỮ LIỆU 6 BẠN (bạn tự sửa nội dung nhen)
-    const profiles = {
-        "Đặng Nguyễn Trúc My": {
-            img: "anh1.jpg",
-            birth: "29/11/2008",
-            email: "trucmybtre2@gmail.com",
-            quote: "More of you, less of me."
-        },
-        "Nguyễn Bảo Thy": {
-            img: "anh2.jpg",
-            birth: "07/06/2008",
-            email: "thybao573@gmail.com",
-            quote: "안녕~ 여러분은 잘 지냈어요?
-                    여기에 제 정보가 있습니다👋🏻
-                    제 이름이 보오 티입니다, 저도 학생입니다
-                    반가워요🐼
-                    남자 친구 없어=)))"
-        },
-        "Ngô Thanh Trúc": {
-            img: "anh3.jpg",
-            birth: "22/2/2008",
-            email: "ntt27011@gmail.com",
-            quote: "今は葉が黄色くなり、秋は過ぎ去りました。私は一生あなたのことを悲しむでしょう。"
-        },
-        "Huỳnh Ánh Dương": {
-            img: "anh4.jpg",
-            birth: "09/10/2008",
-            email: "aduo0908@gmail.com",
-            quote: "Vivre pour l'amour
-                    Trouve la joie, appelle-moi🤙🏻"
-        },
-        "Nguyễn Huỳnh Bảo Hân": {
-            img: "anh5.jpg",
-            birth: "03/03/2008",
-            email: "baohannguyenhuynh00308@gmail.com",
-            quote: "I can't change the direction of the wind, but I can adjust my sails to always reach my destination."
-        },
-        "Tô Nguyễn Tường Vân": {
-            img: "anh6.jpg",
-            birth: "29/9/2008",
-            email: "tonguyentuongvan08@gmail.com",
-            quote: "妃就是妃，
-                    贵妃就是贵妃，
-                    差别人一个字，
-                    地位低别人一等。"
-        }
-    };
-
-    // Hàm mở popup
-    function showProfile(name) {
-        const data = profiles[name];
-
-        document.getElementById("pImg").src = data.img;
-        document.getElementById("pName").innerText = name;
-        document.getElementById("pBirth").innerText = data.birth;
-        document.getElementById("pEmail").innerText = data.email;
-        document.getElementById("pQuote").innerText = data.quote;
-
-        document.getElementById("profilePopup").style.display = "flex";
-    }
-
-    // Đóng popup
-    function closeProfile() {
-        document.getElementById("profilePopup").style.display = "none";
-    }
-</script>
-
         body {
             font-family: Arial, sans-serif;
             background: #EAF6FF;
@@ -168,21 +46,58 @@
         .name {
             font-size: 20px;
             font-weight: bold;
+            cursor: pointer;
+            color: #007BFF;
         }
 
-        /* ==========================
-           BÀI HỌC — Ô DÀI FULL NGANG
-        ========================== */
+        /* Popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
 
-.lessons {
-    margin: 40px auto;
-    padding: 20px;
-    max-width: 1000px; /* tăng chiều rộng */
-    min-height: 600px; /* tăng chiều dài */
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-}
+        .popup-content {
+            background: #fff;
+            width: 90%;
+            max-width: 450px;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+        }
+
+        .popup-content img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* Bài học */
+        .lessons {
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 1000px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
 
         .lesson-list {
             list-style: none;
@@ -195,19 +110,19 @@
         }
 
         .lesson-list a {
-    display: block;
-    width: 95%;         /* giảm chiều ngang */
-    padding: 30px 15px; /* giảm padding trái/phải */
-    background: #f8f9fa;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #0056d6;
-    font-weight: 600;
-    font-size: 18px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: 0.2s;
-    margin: 0 auto;     /* canh giữa khung */
-}
+            display: block;
+            width: 95%;
+            padding: 30px 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #0056d6;
+            font-weight: 600;
+            font-size: 18px;
+            margin: 0 auto;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+        }
 
         .lesson-list a:hover {
             background: #e2e6ea;
@@ -218,6 +133,63 @@
             text-align: center;
         }
     </style>
+
+    <script>
+        // Dữ liệu 6 bạn
+        const profiles = {
+            "Đặng Nguyễn Trúc My": {
+                img: "anh1.jpg",
+                birth: "29/11/2008",
+                email: "trucmybtre2@gmail.com",
+                quote: "More of you, less of me."
+            },
+            "Nguyễn Bảo Thy": {
+                img: "anh2.jpg",
+                birth: "07/06/2008",
+                email: "thybao573@gmail.com",
+                quote: "안녕~ 여러분은 잘 지냈어요?🐼"
+            },
+            "Ngô Thanh Trúc": {
+                img: "anh3.jpg",
+                birth: "22/02/2008",
+                email: "ntt27011@gmail.com",
+                quote: "今は葉が黄色くなり、秋は過ぎ去りました。私は一生あなたのことを悲しむでしょう。"
+            },
+            "Huỳnh Ánh Dương": {
+                img: "anh4.jpg",
+                birth: "09/10/2008",
+                email: "aduo0908@gmail.com",
+                quote: "Vivre pour l'amour. Trouve la joie, appelle-moi🤙🏻"
+            },
+            "Nguyễn Huỳnh Bảo Hân": {
+                img: "anh5.jpg",
+                birth: "03/03/2008",
+                email: "baohannguyenhuynh00308@gmail.com",
+                quote: "I adjust my sails to always reach my destination."
+            },
+            "Tô Nguyễn Tường Vân": {
+                img: "anh6.jpg",
+                birth: "29/09/2008",
+                email: "tonguyentuongvan08@gmail.com",
+                quote: "妃就是妃，贵妃就是贵妃，差别人一个字，地位低别人一等。"
+            }
+        };
+
+        // Mở popup
+        function showProfile(name) {
+            const data = profiles[name];
+            document.getElementById("pImg").src = data.img;
+            document.getElementById("pName").innerText = name;
+            document.getElementById("pBirth").innerText = data.birth;
+            document.getElementById("pEmail").innerText = data.email;
+            document.getElementById("pQuote").innerText = data.quote;
+            document.getElementById("profilePopup").style.display = "flex";
+        }
+
+        function closeProfile() {
+            document.getElementById("profilePopup").style.display = "none";
+        }
+    </script>
 </head>
 
 <body>
@@ -226,39 +198,46 @@
 
     <div class="container">
         <div class="member">
-            <img src="anh1.jpg" alt="Đặng Nguyễn Trúc My" />
-            <div class="name" onclick="showProfile('Đặng Nguyễn Trúc My')" style="cursor:pointer;color:#007BFF;">
-    Đặng Nguyễn Trúc My
-        <div>
-            
-        <div class="member">
-            <img src="anh2.jpg" alt="Nguyễn Bảo Thy" />
-            <div class="name" onclick="showProfile('Nguyễn Bảo Thy')" style="cursor:pointer;color:#007BFF;">
-    Nguyễn Bảo Thy
+            <img src="anh1.jpg" alt="">
+            <div class="name" onclick="showProfile('Đặng Nguyễn Trúc My')">Đặng Nguyễn Trúc My</div>
         </div>
 
         <div class="member">
-            <img src="anh3.jpg" alt="Ngô Thanh Trúc" />
-            <div class="name" onclick="showProfile('Ngô Thanh Trúc')" style="cursor:pointer;color:#007BFF;">
-    Ngô Thanh Trúc
+            <img src="anh2.jpg" alt="">
+            <div class="name" onclick="showProfile('Nguyễn Bảo Thy')">Nguyễn Bảo Thy</div>
         </div>
 
         <div class="member">
-            <img src="anh4.jpg" alt="Huỳnh Ánh Dương" />
-            <div class="name" onclick="showProfile('Huỳnh Ánh Dương')" style="cursor:pointer;color:#007BFF;">
-    Huỳnh Ánh Dương
+            <img src="anh3.jpg" alt="">
+            <div class="name" onclick="showProfile('Ngô Thanh Trúc')">Ngô Thanh Trúc</div>
         </div>
 
         <div class="member">
-            <img src="anh5.jpg" alt="Nguyễn Huỳnh Bảo Hân" />
-            <div class="name" onclick="showProfile('Nguyễn Huỳnh Bảo Hân')" style="cursor:pointer;color:#007BFF;">
-    Nguyễn Huỳnh Bảo Hân
+            <img src="anh4.jpg" alt="">
+            <div class="name" onclick="showProfile('Huỳnh Ánh Dương')">Huỳnh Ánh Dương</div>
         </div>
 
         <div class="member">
-            <img src="anh6.jpg" alt="Tô Nguyễn Tường Vân" />
-            <div class="name" onclick="showProfile('Tô Nguyễn Tường Vân')" style="cursor:pointer;color:#007BFF;">
-    Tô Nguyễn Tường Vân
+            <img src="anh5.jpg" alt="">
+            <div class="name" onclick="showProfile('Nguyễn Huỳnh Bảo Hân')">Nguyễn Huỳnh Bảo Hân</div>
+        </div>
+
+        <div class="member">
+            <img src="anh6.jpg" alt="">
+            <div class="name" onclick="showProfile('Tô Nguyễn Tường Vân')">Tô Nguyễn Tường Vân</div>
+        </div>
+    </div>
+
+    <!-- Popup -->
+    <div id="profilePopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeProfile()">&times;</span>
+            <img id="pImg" src="">
+            <h2 id="pName"></h2>
+            <p><strong>Ngày sinh:</strong> <span id="pBirth"></span></p>
+            <p><strong>Email:</strong> <span id="pEmail"></span></p>
+            <p><strong>Châm ngôn yêu thích:</strong></p>
+            <p id="pQuote" style="font-style: italic;"></p>
         </div>
     </div>
 
@@ -266,30 +245,19 @@
     <section class="lessons">
         <h2>Danh sách Bài Học</h2>
 
-<ul class="lesson-list">
-    <li>
-        <a href="https://www.canva.com/design/DAG1lItBaPM/x443j1maq3FFFfSX_jxMvw/edit?utm_content=DAG1lItBaPM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"_blank">
-            Bài 1 + 2: Làm quen với trí tuệ nhân tạo
-        </a>
-    </li>
-    <li><a href="#">Bài 3: Một số thiết bị mạng thông dụng</a></li>
-        <a href="https://www.canva.com/design/DAGzzzrEmJ4/CLsNfeL7fr05u5kddoBdMg/edit?utm_content=DAGzzzrEmJ4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"_blank">
-            Bài 4: Giao thức mạng
-        </a>
-    <li>
-    <li><a href="#">Bài 5: Thực hành chia sẻ tài nguyên trên mạng</a></li>
-    <li>
-        <a href="https://www.canva.com/design/DAG2fE9kO9E/view?utm_content=DAG2fE9kO9E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
-            Bài 6: Giao tiếp và ứng xử trong không gian mạng
-        </a>
-    </li>
-    <li><a href="#">Bài 7: HTML và cấu trúc trang web</a></li>
-    <li><a href="#">Bài 8: Định dạng văn bản</a></li>
-    <li><a href="#">Bài 9: Tạo danh sách, bảng</a></li>
-    <li><a href="#">Bài 10: Tạo liên kết</a></li>
-</ul>
+        <ul class="lesson-list">
+            <li><a href="#">Bài 1 + 2: Làm quen với trí tuệ nhân tạo</a></li>
+            <li><a href="#">Bài 3: Một số thiết bị mạng thông dụng</a></li>
+            <li><a href="#">Bài 4: Giao thức mạng</a></li>
+            <li><a href="#">Bài 5: Chia sẻ tài nguyên</a></li>
+            <li><a href="#">Bài 6: Giao tiếp trong không gian mạng</a></li>
+            <li><a href="#">Bài 7: HTML và cấu trúc trang web</a></li>
+            <li><a href="#">Bài 8: Định dạng văn bản</a></li>
+            <li><a href="#">Bài 9: Tạo danh sách, bảng</a></li>
+            <li><a href="#">Bài 10: Tạo liên kết</a></li>
+        </ul>
 
     </section>
-    </body>
-</html>
 
+</body>
+</html>
