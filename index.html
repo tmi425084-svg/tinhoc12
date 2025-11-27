@@ -3,61 +3,72 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nhóm 5 - Trang Chủ</title>
+    <title>Thành viên nhóm 5</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
             background: #EAF6FF;
             margin: 0;
+            padding: 0;
         }
 
-        /* MENU */
-        .navbar {
-            background: white;
-            padding: 15px 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        /* ------------------------------- */
+        /* NAVIGATION BAR */
+        /* ------------------------------- */
+        nav {
+            width: 100%;
+            background: #007BFF;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
             display: flex;
             justify-content: center;
             gap: 40px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            padding: 0;
+            margin: 0;
         }
 
-        .navbar a {
+        nav ul li a {
+            color: white;
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
-            color: #007bff;
             transition: 0.2s;
         }
 
-        .navbar a:hover {
-            color: #0056d6;
+        nav ul li a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
         }
 
         h1 {
             text-align: center;
-            margin-top: 20px;
+            margin: 30px 0;
         }
 
+        /* ------------------------------- */
+        /* MEMBERS GRID */
+        /* ------------------------------- */
         .container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1200px;
+            gap: 20px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
         }
 
         .member {
             background: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            border-radius: 12px;
             text-align: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
             cursor: pointer;
+            transition: 0.2s;
         }
 
         .member:hover {
@@ -65,45 +76,76 @@
         }
 
         .member img {
-            width: 200px;
-            height: 200px;
+            width: 100%;
+            max-width: 180px;
+            height: 180px;
             object-fit: cover;
             border-radius: 50%;
+            margin-bottom: 10px;
         }
 
         .name {
-            margin-top: 12px;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
-            color: #007bff;
+            color: #007BFF;
         }
 
-        /* Bài học */
+        /* ------------------------------- */
+        /* LESSON LIST */
+        /* ------------------------------- */
         .lessons {
             margin: 40px auto;
-            padding: 30px;
-            max-width: 1100px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+            padding: 20px;
+            max-width: 1000px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .lesson-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lesson-list li {
+            margin-bottom: 15px;
         }
 
         .lesson-list a {
             display: block;
-            padding: 22px;
-            margin-bottom: 15px;
+            width: 95%;
+            padding: 30px 15px;
             background: #f8f9fa;
-            border-radius: 10px;
+            border-radius: 8px;
             text-decoration: none;
             color: #0056d6;
-            font-size: 20px;
             font-weight: 600;
+            font-size: 18px;
+            margin: 0 auto;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             transition: 0.2s;
         }
 
         .lesson-list a:hover {
             background: #e2e6ea;
-            transform: translateX(7px);
+            transform: translateX(5px);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        /* ------------------------------- */
+        /* FOOTER */
+        /* ------------------------------- */
+        footer {
+            margin-top: 50px;
+            background: #007BFF;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -111,11 +153,13 @@
 <body>
 
     <!-- MENU -->
-    <div class="navbar">
-        <a href="index.html">Trang chủ</a>
-        <a href="my.html">Thông tin cá nhân</a>
-        <a href="#lessons">Bài học</a>
-    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="my.html">Thông tin cá nhân</a></li>
+            <li><a href="#lessons">Bài học</a></li>
+        </ul>
+    </nav>
 
     <h1>Các thành viên của nhóm</h1>
 
@@ -155,14 +199,26 @@
 
     <!-- Danh sách bài học -->
     <section class="lessons" id="lessons">
-        <h2 style="text-align:center;">Danh sách Bài Học</h2>
+        <h2>Danh sách Bài Học</h2>
 
         <ul class="lesson-list">
-            <li><a href="#">Bài 1 + 2: Làm quen với trí tuệ nhân tạo</a></li>
+            <li>
+                <a href="https://www.canva.com/design/DAG1lItBaPM/x443j1maq3FFFfSX_jxMvw/edit?utm_content=DAG1lItBaPM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+                    Bài 1 + 2: Làm quen với trí tuệ nhân tạo
+                </a>
+            </li>
             <li><a href="#">Bài 3: Một số thiết bị mạng thông dụng</a></li>
-            <li><a href="#">Bài 4: Giao thức mạng</a></li>
-            <li><a href="#">Bài 5: Thực hành chia sẻ tài nguyên</a></li>
-            <li><a href="#">Bài 6: Giao tiếp trong không gian mạng</a></li>
+            <li>
+                <a href="https://www.canva.com/design/DAGzzzrEmJ4/CLsNfeL7fr05u5kddoBdMg/edit?utm_content=DAGzzzrEmJ4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+                    Bài 4: Giao thức mạng
+                </a>
+            </li>
+            <li><a href="#">Bài 5: Thực hành chia sẻ tài nguyên trên mạng</a></li>
+            <li>
+                <a href="https://www.canva.com/design/DAG2fE9kO9E/view?utm_content=DAG2fE9kO9E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+                    Bài 6: Giao tiếp và ứng xử trong không gian mạng
+                </a>
+            </li>
             <li><a href="#">Bài 7: HTML và cấu trúc trang web</a></li>
             <li><a href="#">Bài 8: Định dạng văn bản</a></li>
             <li><a href="#">Bài 9: Tạo danh sách, bảng</a></li>
@@ -170,6 +226,11 @@
         </ul>
 
     </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 - Nhóm 5 | Thiết kế bởi Đặng Nguyễn Trúc My 💙
+    </footer>
 
 </body>
 </html>
