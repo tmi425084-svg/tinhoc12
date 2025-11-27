@@ -11,6 +11,35 @@
             background: #EAF6FF;
             margin: 0;
             padding: 0;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* DARK MODE */
+        body.dark {
+            background: #1e1f22;
+            color: white;
+        }
+
+        body.dark .member {
+            background: #2b2c30;
+            color: white;
+        }
+
+        body.dark .lessons {
+            background: #2b2c30;
+        }
+
+        body.dark .lesson-list a {
+            background: #3a3b40;
+            color: #fff;
+        }
+
+        body.dark nav {
+            background: #111;
+        }
+
+        body.dark footer {
+            background: #111;
         }
 
         /* ------------------------------- */
@@ -21,6 +50,9 @@
             background: #007BFF;
             padding: 15px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav ul {
@@ -43,6 +75,44 @@
         nav ul li a:hover {
             text-decoration: underline;
             opacity: 0.8;
+        }
+
+        /* DARK MODE BUTTON */
+        #toggleDark {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        #toggleDark:hover {
+            transform: scale(1.05);
+        }
+
+        /* ------------------------------- */
+        /* BANNER */
+        /* ------------------------------- */
+        .banner {
+            width: 100%;
+            height: 260px;
+            background-image: url('banner.jpg'); /* Bạn đổi ảnh nếu muốn */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
         }
 
         h1 {
@@ -102,19 +172,8 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
-        .lesson-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .lesson-list li {
-            margin-bottom: 15px;
-        }
-
         .lesson-list a {
             display: block;
-            width: 95%;
             padding: 30px 15px;
             background: #f8f9fa;
             border-radius: 8px;
@@ -122,31 +181,18 @@
             color: #0056d6;
             font-weight: 600;
             font-size: 18px;
-            margin: 0 auto;
+            margin: 0 auto 15px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            transition: 0.2s;
         }
 
-        .lesson-list a:hover {
-            background: #e2e6ea;
-            transform: translateX(5px);
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        /* ------------------------------- */
-        /* FOOTER */
-        /* ------------------------------- */
         footer {
             margin-top: 50px;
             background: #007BFF;
             text-align: center;
             padding: 20px;
             color: white;
-            font-size: 16px;
         }
+
     </style>
 </head>
 
@@ -156,81 +202,86 @@
     <nav>
         <ul>
             <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="my.html">Thông tin cá nhân</a></li>
+            <li><a href="#members">Thông tin cá nhân</a></li>
             <li><a href="#lessons">Bài học</a></li>
         </ul>
     </nav>
 
-    <h1>Các thành viên của nhóm</h1>
+    <!-- BANNER -->
+    <div class="banner">
+        Nhóm 5 – Trang Web Chính Thức
+    </div>
+
+    <h1 id="members">Các thành viên của nhóm</h1>
 
     <div class="container">
 
         <div class="member" onclick="location.href='my.html'">
-            <img src="anh1.jpg" alt="">
+            <img src="anh1.jpg">
             <div class="name">Đặng Nguyễn Trúc My</div>
         </div>
 
         <div class="member" onclick="location.href='thy.html'">
-            <img src="anh2.jpg" alt="">
+            <img src="anh2.jpg">
             <div class="name">Nguyễn Bảo Thy</div>
         </div>
 
         <div class="member" onclick="location.href='truc.html'">
-            <img src="anh3.jpg" alt="">
+            <img src="anh3.jpg">
             <div class="name">Ngô Thanh Trúc</div>
         </div>
 
         <div class="member" onclick="location.href='duong.html'">
-            <img src="anh4.jpg" alt="">
+            <img src="anh4.jpg">
             <div class="name">Huỳnh Ánh Dương</div>
         </div>
 
         <div class="member" onclick="location.href='han.html'">
-            <img src="anh5.jpg" alt="">
+            <img src="anh5.jpg">
             <div class="name">Nguyễn Huỳnh Bảo Hân</div>
         </div>
 
         <div class="member" onclick="location.href='van.html'">
-            <img src="anh6.jpg" alt="">
+            <img src="anh6.jpg">
             <div class="name">Tô Nguyễn Tường Vân</div>
         </div>
 
     </div>
 
-    <!-- Danh sách bài học -->
+    <!-- BÀI HỌC -->
     <section class="lessons" id="lessons">
         <h2>Danh sách Bài Học</h2>
 
         <ul class="lesson-list">
-            <li>
-                <a href="https://www.canva.com/design/DAG1lItBaPM/x443j1maq3FFFfSX_jxMvw/edit?utm_content=DAG1lItBaPM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
-                    Bài 1 + 2: Làm quen với trí tuệ nhân tạo
-                </a>
-            </li>
-            <li><a href="#">Bài 3: Một số thiết bị mạng thông dụng</a></li>
-            <li>
-                <a href="https://www.canva.com/design/DAGzzzrEmJ4/CLsNfeL7fr05u5kddoBdMg/edit?utm_content=DAGzzzrEmJ4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
-                    Bài 4: Giao thức mạng
-                </a>
-            </li>
-            <li><a href="#">Bài 5: Thực hành chia sẻ tài nguyên trên mạng</a></li>
-            <li>
-                <a href="https://www.canva.com/design/DAG2fE9kO9E/view?utm_content=DAG2fE9kO9E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
-                    Bài 6: Giao tiếp và ứng xử trong không gian mạng
-                </a>
-            </li>
-            <li><a href="#">Bài 7: HTML và cấu trúc trang web</a></li>
-            <li><a href="#">Bài 8: Định dạng văn bản</a></li>
-            <li><a href="#">Bài 9: Tạo danh sách, bảng</a></li>
-            <li><a href="#">Bài 10: Tạo liên kết</a></li>
+            <li><a href="https://www.canva.com/design/DAG1lItBaPM/x443j1maq3FFFfSX_jxMvw/edit?utm_source=sharebutton">Bài 1 + 2: Làm quen với trí tuệ nhân tạo</a></li>
+            <li><a>Bài 3: Một số thiết bị mạng thông dụng</a></li>
+            <li><a href="https://www.canva.com/design/DAGzzzrEmJ4/CLsNfeL7fr05u5kddoBdMg/edit?utm_source=sharebutton">Bài 4: Giao thức mạng</a></li>
+            <li><a>Bài 5: Thực hành chia sẻ tài nguyên</a></li>
+            <li><a href="https://www.canva.com/design/DAG2fE9kO9E/view?utm_source=sharebutton">Bài 6: Giao tiếp và ứng xử trong không gian mạng</a></li>
+            <li><a>Bài 7: HTML và cấu trúc trang web</a></li>
+            <li><a>Bài 8: Định dạng văn bản</a></li>
+            <li><a>Bài 9: Tạo danh sách, bảng</a></li>
+            <li><a>Bài 10: Tạo liên kết</a></li>
         </ul>
-
     </section>
 
     <!-- FOOTER -->
     <footer>
-        © 2025 - Nhóm 5 | Thiết kế bởi Đặng Nguyễn Trúc My 💙
+        © 2025 - Nhóm 5 | Thiết kế bởi các thành viên nhóm 5 💙
     </footer>
+
+    <!-- DARK MODE BUTTON -->
+    <button id="toggleDark">Chế độ tối</button>
+
+    <script>
+        const btn = document.getElementById("toggleDark");
+        btn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            btn.textContent = document.body.classList.contains("dark")
+                ? "Chế độ sáng"
+                : "Chế độ tối";
+        });
+    </script>
 
 </body>
 </html>
