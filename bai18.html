@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 18: Thực hiện tổng hợp thiết kế trang web</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #EAF6FF;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .content {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        /* cho textarea hiển thị đẹp và cuộn nếu dài */
+        .raw-text {
+            width: 100%;
+            height: 460px;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            overflow: auto;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Bài 18: Thực hiện tổng hợp thiết kế trang web</h1>
+
+    <div class="content">
+        <!-- Nguyên văn nội dung bạn cung cấp, KHÔNG chỉnh sửa gì -->
+        <textarea class="raw-text" readonly>
+Luyện tập 1 trang 105 Tin học 12: Tạo trang dang_ki.html chứa biểu mẫu đăng kí câu lạc bộ và bổ sung liên kết tới trang dang_ki trong phần cuối trang của tất cả các trang.
+Lời giải:
+Để tạo trang "dang_ki.html" chứa biểu mẫu đăng kí câu lạc bộ và bổ sung liên kết tới trang "dang_ki" trong phần cuối trang của tất cả các trang, em có thể làm như sau:
+- Tạo tệp tin HTML mới và đặt tên là "dang_ki.html".
+- Trong tệp tin "dang_ki.html", tạo biểu mẫu đăng kí câu lạc bộ bằng cách sử dụng các phần tử HTML như <form>, <input>, và <button>. Thiết kế biểu mẫu theo yêu cầu của em, bao gồm các trường nhập thông tin và nút gửi đăng kí.
+- Sau khi hoàn thành biểu mẫu, em có thể thêm CSS để định dạng giao diện biểu mẫu theo ý muốn. Sử dụng các lớp CSS để tạo kiểu cho các phần tử trong biểu mẫu.
+- Sau khi tạo xong trang "dang_ki.html", em cần bổ sung liên kết tới trang "dang_ki" trong phần cuối trang của tất cả các trang khác trong website.
+
+Luyện tập 2 trang 105 Tin học 12: Thay đổi định dạng và màu sắc của phông chữ trong các vùng khi di chuyển chuột qua.
+Để thay đổi định dạng và màu sắc của phông chữ trong các vùng khi di chuyển chuột qua, em có thể sử dụng hiệu ứng hover trong CSS.
+
+
+Vận dụng trang 105 Tin học 12: Hãy đưa ra một thiết kế khác cho website đã tạo ở phần Thực hành. Viết định dạng theo thiết kế mới và chuyển toàn bộ website sang định dạng mới.
+Lời giải:
+Để áp dụng thiết kế mới cho trang web đã tạo trong phần Thực hành, em cần thực hiện các bước sau:
+- Tạo một tệp CSS mới và đặt tên là "style.css" (hoặc tên tùy chọn khác).
+- Trong tệp CSS, thêm mã CSS để định dạng các phần tử theo thiết kế mới.
+Ví dụ:
+/* Định dạng phần banner */
+.banner {
+  background: url("../assets/img/bg-masthead.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  text-align: center;
+  color: darkred;
+}
+.banner h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+/* Định dạng phần slogan */
+.slogan {
+  background-color: rgb(248, 249, 250);
+  text-align: center;
+  padding-right: 0.5rem;
+  padding-left: 3rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -1;
+  max-width: 100%;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+.block_3 {
+  flex: 0 0 33.33333333%;
+}
+.block_3 h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.text-content {
+  font-size: 16px;
+  color: #333;
+}
+
+        </textarea>
+    </div>
+
+    <a href="index.html">← Quay lại trang chính</a>
+
+</div>
+
+</body>
+</html>

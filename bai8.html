@@ -23,23 +23,33 @@
             margin-top: 0;
             text-align: center;
         }
-        p, li {
-            font-size: 18px;
-            line-height: 1.8;
+
+        .content {
+            font-size: 16px;
+            line-height: 1.6;
         }
-        ul {
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        h2 {
-            margin-top: 25px;
-        }
+
         a {
             display: inline-block;
             margin-top: 25px;
             text-decoration: none;
             font-weight: bold;
             color: #007BFF;
+        }
+
+        /* cho textarea hiển thị đẹp và cuộn nếu dài */
+        .raw-text {
+            width: 100%;
+            height: 460px;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            overflow: auto;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa;
         }
     </style>
 </head>
@@ -50,48 +60,57 @@
 
     <h1>Bài 8: Định dạng văn bản</h1>
 
-    <h2>Luyện tập 1</h2>
+    <div class="content">
+        <!-- Nguyên văn nội dung bạn cung cấp, KHÔNG chỉnh sửa gì -->
+        <textarea class="raw-text" readonly>
+Luyện tập 1 trang 51 Tin học 12: Hãy sửa lại phần tử sau để làm nổi bật ý chính của câu: <p> thẻ strong vào thẻ em được sử dụng để nhấn mạnh vào nội dung trong phần tử. Thẻ B chỉ có tác dụng in đậm văn bản <p>
+Lời giải:
+<p><strong>Thẻ strong</strong> vào <em>thẻ em</em> được sử dụng để nhấn mạnh vào nội dung trong phần tử. Thẻ <strong>B</strong> chỉ có tác dụng in đậm văn bản.</p>
 
-    <p>Hãy sửa lại phần tử sau để làm nổi bật ý chính của câu:</p>
+Luyện tập 2 trang 51 Tin học 12: Trình bày đoạn văn bản sau bằng mã HTML:
+ INTERNET TỐC ĐỘ CAO
+ Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.
+Các tính năng nổi bật:
+ Tốc độ siêu cao từ 150 MBps trở lên
+ Lắp đặt nhanh chóng trong 24h
+Phù hợp với cá nhân/Hộ gia đình
+Tặng modem 2 băng tần
+Miễn phí lắp đặt hỗ trợ 24/7 .
+Lời giải:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERNET TỐC ĐỘ CAO</title>
+</head>
+<body>
+<h1>INTERNET TỐC ĐỘ CAO</h1>
+<p><em>Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.</em></p>
+<h2><strong>Các tính năng nổi bật:</strong></h2>
+<ul>
+    <li>Tốc độ siêu cao từ 150 MBps trở lên</li>
+    <li>Lắp đặt nhanh chóng trong 24h</li>
+    <li>Phù hợp với cá nhân/Hộ gia đình</li>
+    <li>Tặng modem 2 băng tần</li>
+    <li>Miễn phí lắp đặt hỗ trợ 24/7</li>
+</ul>
+</body>
+</html>
+Vận dụng 1 trang 51 Tin học 12: Hãy chỉ ra các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề một bài thơ.
+Lời giải:
+Chọn màu cụ thể: Trước tiên, bạn cần quyết định màu sắc bạn muốn sử dụng cho tiêu đề của bài thơ.
+Chọn ảnh nền: Chọn một bức ảnh phù hợp để sử dụng làm nền cho tiêu đề. Bạn cũng có thể sử dụng một ảnh trắng đơn giản và thêm màu sắc sau đó.
+Tạo tiêu đề trong HTML: Sử dụng thẻ <h1>, <h2>, hoặc <h3> để tạo tiêu đề của bài thơ.
+Thêm ảnh nền và thuộc tính color để thay đổi màu chữ.
 
-    <p><strong>Thẻ strong</strong> và <em>thẻ em</em> được sử dụng để nhấn mạnh vào nội dung trong phần tử. 
-    Thẻ <strong>B</strong> chỉ có tác dụng in đậm văn bản.</p>
+Vận dụng 2 trang 51 Tin học 12: Hãy đưa ra các định dạng một đoạn văn bản để được kết quả như sau:
+ Định dạng chữ đậm
+- Định dạng chữ thường.
+- Định dạng chữ cỡ chữ.
+        </textarea>
+    </div>
 
-    <h2>Luyện tập 2</h2>
-
-    <p>Trình bày đoạn văn bản sau bằng mã HTML:</p>
-
-    <h3>INTERNET TỐC ĐỘ CAO</h3>
-    <p><em>Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.</em></p>
-
-    <h4>Các tính năng nổi bật:</h4>
-    <ul>
-        <li>Tốc độ siêu cao từ 150 MBps trở lên</li>
-        <li>Lắp đặt nhanh chóng trong 24h</li>
-        <li>Phù hợp với cá nhân/Hộ gia đình</li>
-        <li>Tặng modem 2 băng tần</li>
-        <li>Miễn phí lắp đặt hỗ trợ 24/7</li>
-    </ul>
-
-    <h2>Vận dụng 1</h2>
-
-    <p><b>Các bước thực hiện:</b></p>
-    <ul>
-        <li>Chọn màu cụ thể từ bức ảnh.</li>
-        <li>Chọn ảnh nền phù hợp.</li>
-        <li>Tạo tiêu đề bằng thẻ h1/h2/h3.</li>
-        <li>Thêm thuộc tính <strong>color</strong> để đổi màu chữ.</li>
-    </ul>
-
-    <h2>Vận dụng 2</h2>
-
-    <p>Hãy đưa ra các định dạng một đoạn văn bản để được kết quả:</p>
-
-    <p><strong>Định dạng chữ đậm</strong></p>
-    <p>- Định dạng chữ thường.</p>
-    <p>- Định dạng chữ cỡ chữ.</p>
-
-    <!-- nút quay về -->
     <a href="index.html">← Quay lại trang chính</a>
 
 </div>
