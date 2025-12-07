@@ -115,12 +115,12 @@
         }
         
         body.dark #toggleDark {
-            background: #333; 
+            background: #333; /* Màu tối hơn khi ở Dark mode */
         }
 
         #toggleDark:hover {
             transform: scale(1.05);
-            background: #005600; 
+            background: #005600; /* Xanh lá đậm hơn khi hover */
         }
         
         body.dark #toggleDark:hover {
@@ -151,7 +151,7 @@
         }
 
         body.dark h1 {
-            color: #00ff00; 
+            color: #00ff00; /* Xanh lá cây sáng hơn trong Dark Mode */
         }
 
         /* MEMBERS GRID */
@@ -170,11 +170,12 @@
             text-align: center;
             cursor: pointer;
             transition: 0.3s;
+            /* Màu chữ của Member đã được định nghĩa là #F0F0F0 ở .lessons, .feedback, .member */
         }
 
         .member:hover {
             transform: scale(1.05); 
-            background: rgba(0, 0, 0, 0.7); 
+            background: rgba(0, 0, 0, 0.7); /* Nền tối hơn khi hover */
         }
         
         body.dark .member:hover {
@@ -211,6 +212,7 @@
             padding: 40px; 
             line-height: 1.8; 
             font-size: 20px; 
+            /* Màu nền và chữ đã được định nghĩa ở trên */
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
             text-align: center; 
@@ -234,6 +236,7 @@
         }
 
         .profile-card p {
+            /* Màu chữ chính đã là gần trắng (#F0F0F0) */
             font-size: 20px; 
             margin: 10px 0;
             color: #F0F0F0;
@@ -244,7 +247,7 @@
             font-style: italic;
             margin-top: 25px;
             padding: 0 30px;
-            color: #cccccc; 
+            color: #cccccc; /* Màu xám sáng để làm nổi bật */
         }
 
         body.dark .profile-card .quote-text {
@@ -253,7 +256,7 @@
 
         .profile-card a {
             font-size: 18px; 
-            color: #00ff00; 
+            color: #00ff00; /* Link xanh lá cây sáng */
         }
         
         /* LESSON LIST */
@@ -262,6 +265,7 @@
             padding: 25px; 
             max-width: 1000px;
             border-radius: 10px;
+            /* Màu nền và chữ đã được định nghĩa ở trên */
         }
 
         .lessons h2 {
@@ -280,10 +284,11 @@
         .lesson-list a {
             display: block;
             padding: 15px 20px; 
+            /* Nền tối mờ, chữ trắng */
             background: rgba(255, 255, 255, 0.1); 
             border-radius: 10px;
             text-decoration: none;
-            color: #ffffff; 
+            color: #ffffff; /* Chữ trắng */
             font-weight: 600;
             font-size: 20px; 
             margin-bottom: 15px;
@@ -302,6 +307,7 @@
             margin: 50px auto;
             padding: 40px 45px; 
             border-radius: 15px;
+            /* Màu nền và chữ đã được định nghĩa ở trên */
         }
 
         .feedback h2 {
@@ -330,6 +336,7 @@
             padding: 16px 20px; 
             font-size: 18px; 
             border-radius: 12px;
+            /* Nền tối mờ, viền xám, chữ trắng */
             background: rgba(255, 255, 255, 0.1); 
             border: 1px solid #777;
             color: white;
@@ -347,6 +354,11 @@
             outline: none;
         }
         
+        .feedback-form input::placeholder,
+        .feedback-form textarea::placeholder {
+            color: #ccc;
+        }
+
         .feedback-form button {
             display: block;
             width: 240px; 
@@ -364,7 +376,7 @@
         }
 
         .feedback-form button:hover {
-            background: #005600; 
+            background: #005600; /* Xanh lá đậm hơn */
         }
 
         /* DARK MODE FORM */
@@ -398,57 +410,6 @@
             background: #111;
         }
 
-        /* ========================================================= */
-        /* === CSS ĐÃ BỔ SUNG: CÂY THÔNG & TUẦN LỘC === */
-        /* ========================================================= */
-
-        /* Hiệu ứng chuyển động (Tuần lộc bay) */
-        @keyframes sway {
-            0% { transform: translateY(0) rotate(1deg); }
-            50% { transform: translateY(-10px) rotate(-1deg); }
-            100% { transform: translateY(0) rotate(1deg); }
-        }
-
-        @keyframes moveRightLeft {
-            0% { right: -50px; }
-            50% { right: 100px; }
-            100% { right: -50px; }
-        }
-
-        /* Vị trí Cây Thông (Góc phải dưới) */
-        #christmas-tree {
-            position: fixed;
-            bottom: 60px; /* Nằm trên nút Dark Mode */
-            right: 150px;
-            width: 80px;
-            height: 100px;
-            z-index: 100;
-            background: url('tree.png') no-repeat center center; /* Thay bằng đường dẫn ảnh cây thông của bạn */
-            background-size: contain;
-            /* Thêm hiệu ứng lắc lư nhẹ */
-            animation: sway 4s ease-in-out infinite; 
-        }
-        
-        /* Vị trí Tuần Lộc (Bay ngang màn hình) */
-        #reindeer {
-            position: fixed;
-            top: 150px;
-            width: 100px;
-            height: 50px;
-            z-index: 50;
-            background: url('reindeer.png') no-repeat center center; /* Thay bằng đường dẫn ảnh tuần lộc của bạn */
-            background-size: contain;
-            /* Animation di chuyển từ phải qua trái và ngược lại */
-            animation: moveRightLeft 15s linear infinite, 
-                       sway 3s ease-in-out infinite; 
-        }
-        
-        /* NOTE: Vì mình không có ảnh của bạn, nên bạn cần tải 2 ảnh sau:
-           1. Ảnh cây thông (tree.png)
-           2. Ảnh tuần lộc (reindeer.png)
-           Đặt 2 ảnh này cùng thư mục với file index.html
-        */
-
         /* RESPONSIVE - KHÔNG ĐỔI */
         @media (max-width: 850px) { 
             .container {
@@ -462,10 +423,6 @@
             .name {
                 font-size: 22px;
             }
-            /* Ẩn bớt các vật thể trang trí trên di động */
-            #christmas-tree, #reindeer {
-                display: none;
-            }
         }
 
         @media (max-width: 550px) { 
@@ -505,121 +462,3 @@
 </head>
 
 <body>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="#members">Thông tin cá nhân</a></li>
-            <li><a href="#lessons">Bài học</a></li>
-            <li><a href="#feedback">Phản hồi</a></li> </ul>
-    </nav>
-
-    <div class="banner">
-        BÁO CÁO TIN HỌC
-    </div>
-
-    <h1 id="members">Các thành viên của nhóm</h1>
-
-    <div class="container">
-        <div class="member" onclick="location.href='my.html'">
-            <img src="anh1.jpg" alt="Đặng Nguyễn Trúc My">
-            <div class="name">Đặng Nguyễn Trúc My</div>
-        </div>
-
-        <div class="member" onclick="location.href='thy.html'">
-            <img src="anh2.jpg" alt="Nguyễn Bảo Thy">
-            <div class="name">Nguyễn Bảo Thy</div>
-        </div>
-
-        <div class="member" onclick="location.href='truc.html'">
-            <img src="anh3.jpg" alt="Ngô Thanh Trúc">
-            <div class="name">Ngô Thanh Trúc</div>
-        </div>
-
-        <div class="member" onclick="location.href='duong.html'">
-            <img src="anh4.jpg" alt="Huỳnh Ánh Dương">
-            <div class="name">Huỳnh Ánh Dương</div>
-        </div>
-
-        <div class="member" onclick="location.href='han.html'">
-            <img src="anh5.jpg" alt="Nguyễn Huỳnh Bảo Hân">
-            <div class="name">Nguyễn Huỳnh Bảo Hân</div>
-        </div>
-
-        <div class="member" onclick="location.href='van.html'">
-            <img src="anh6.jpg" alt="Tô Nguyễn Tường Vân">
-            <div class="name">Tô Nguyễn Tường Vân</div>
-        </div>
-
-    </div>
-
-    <section class="lessons" id="lessons">
-        <h2>Danh sách Bài Học</h2>
-
-        <ul class="lesson-list">
-            <li><a href="https://www.canva.com/design/DAG1lItBaPM/x443j1maq3FFFfSX_jxMvw/edit?utm_source=sharebutton" target="_blank">Bài 1 + 2: Làm quen với trí tuệ nhân tạo</a></li>
-            <li><a href="#">Bài 3: Một số thiết bị mạng thông dụng</a></li>
-            <li><a href="https://www.canva.com/design/DAGzzzrEmJ4/CLsNfeL7fr05u5kddoBdMg/edit?utm_source=sharebutton" target="_blank">Bài 4: Giao thức mạng</a></li>
-            <li><a href="#">Bài 5: Thực hành chia sẻ tài nguyên</a></li>
-            <li><a href="https://www.canva.com/design/DAG2fE9kO9E/view?utm_source=sharebutton" target="_blank">Bài 6: Giao tiếp và ứng xử trong không gian mạng</a></li>
-            <li><a href="#">Bài 7: HTML và cấu trúc trang web</a></li>
-            <li><a href="bai8.html">Bài 8: Định dạng văn bản</a></li>
-            <li><a href="bai9.html">Bài 9: Tạo danh sách, bảng</a></li>
-            <li><a href="bai10.html">Bài 10: Tạo liên kết</a></li>
-            <li><a href="bai11.html">Bài 11: Chèn tệp đa phương tiện</a></li>
-            <li><a href="bai12.html">Bài 12: Tạo biểu mẫu</a></li>
-            <li><a href="bai13.html">Bài 13: Khái niệm, vai trò của CSS</a></li>
-            <li><a href="bai14.html">Bài 14: Định dạng văn bản bằng CSS</a></li>
-            <li><a href="bai15.html">Bài 15: Tạo màu cho chữ và nền</a></li>
-            <li><a href="bai16.html">Bài 16: Định dạng khung</a></li>
-            <li><a href="bai17.html">Bài 17: Các mức ưu tiên của bộ chọn</a></li>
-            <li><a href="bai18.html">Bài 18: Thực hành tổng hợp thiết kế trang web</a></li>
-        </ul>
-    </section>
-
-    <section class="feedback" id="feedback">
-        <h2>Gửi ý kiến phản hồi</h2>
-        <form class="feedback-form">
-            <div class="row">
-                <input type="text" name="name" placeholder="Họ tên" required>
-                <input type="email" name="email" placeholder="Email" required>
-            </div>
-            <div class="row">
-                <input type="tel" name="phone" placeholder="Số điện thoại">
-            </div>
-            <div class="row">
-                <textarea name="message" placeholder="Ý kiến phản hồi" rows="6" required></textarea>
-            </div>
-            <button type="submit">Gửi phản hồi</button>
-        </form>
-    </section>
-
-    <footer>
-        © 2025 - Nhóm 5 | Thiết kế bởi các thành viên nhóm 5 💙
-    </footer>
-
-    <div id="christmas-tree"></div> 
-    <div id="reindeer"></div>
-        <button id="toggleDark">Chế độ tối</button>
-
-    <script>
-        // Dark mode button
-        const btn = document.getElementById("toggleDark");
-        btn.addEventListener("click", () => {
-            document.body.classList.toggle("dark");
-            btn.textContent = document.body.classList.contains("dark")
-                ? "Chế độ sáng"
-                : "Chế độ tối";
-        });
-
-        // Gửi form (hiện alert)
-        const feedbackForm = document.querySelector('.feedback-form');
-        feedbackForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Cảm ơn bạn đã gửi phản hồi! Chúng tôi sẽ xem xét ý kiến của bạn.'); // Cập nhật nội dung alert
-            feedbackForm.reset();
-        });
-    </script>
-
-</body>
-</html>
