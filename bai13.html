@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 13: Khái niệm, vai trò của CSS</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #EAF6FF;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1100px; /* 👉 rộng hơn */
+            margin: auto;
+            background: #fff;
+            padding: 40px;     /* 👉 thoáng hơn */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 32px;   /* 👉 tiêu đề to hơn */
+        }
+
+        .content {
+            font-size: 20px;   /* 👉 chữ nội dung lớn hơn */
+            line-height: 1.85;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 35px;
+            font-size: 22px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        /* textarea đẹp, dễ đọc */
+        .raw-text {
+            width: 100%;
+            height: 680px;  /* 👉 cao hơn */
+            padding: 18px;
+            font-family: monospace;
+            font-size: 18px; /* 👉 chữ to */
+            white-space: pre-wrap;
+            overflow: auto;
+            box-sizing: border-box;
+            border: 2px solid #bbb;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Bài 13: Khái niệm, vai trò của CSS</h1>
+
+    <div class="content">
+        <textarea class="raw-text" readonly>
+        <!-- NGUYÊN VĂN NỘI DUNG CỦA BẠN Ở ĐÂY KHÔNG CHỈNH SỬA -->
+        </textarea>
+    </div>
+
+    <a href="index.html">← Quay lại trang chính</a>
+
+</div>
+
+</body>
+</html>

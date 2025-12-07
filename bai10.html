@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10: Tạo liên kết</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #EAF6FF;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        h1 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .content {
+            font-size: 20px;
+            line-height: 1.9;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #007BFF;
+            font-size: 20px;
+        }
+
+        pre, code {
+            font-size: 18px;
+            background: #f8f8f8;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            display: block;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Bài 10: Tạo liên kết</h1>
+
+    <div class="content">
+
+        <h2>Luyện tập 1</h2>
+        <p><b>Yêu cầu:</b> Viết đoạn mã để tạo liên kết quay về trang chủ CLB.html trong trang thong_tin.html.</p>
+
+        <pre>
+&lt;a href="CLB.html"&gt;Quay về trang chủ&lt;/a&gt;
+        </pre>
+
+        <h2>Luyện tập 2</h2>
+        <p>Viết trang web giới thiệu bản thân, có 3 liên kết Facebook:</p>
+
+        <pre>
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="https://facebook.com/friend1" target="_blank"&gt;Facebook Bạn 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="https://facebook.com/friend2" target="_blank"&gt;Facebook Bạn 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="https://facebook.com/friend3" target="_blank"&gt;Facebook Bạn 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        </pre>
+
+        <h2>Vận dụng</h2>
+        <p>Đặt liên kết từ tên CLB đến đoạn giới thiệu tương ứng trong trang.</p>
+
+        <pre>
+&lt;td&gt;&lt;a href="#club1"&gt;Câu lạc bộ A&lt;/a&gt;&lt;/td&gt;
+        </pre>
+
+        <p>Phần dưới đặt các đoạn thông tin:</p>
+
+        <pre>
+&lt;h2 id="club1"&gt;Câu lạc bộ A&lt;/h2&gt;
+&lt;p&gt;Địa điểm: ...&lt;/p&gt;
+&lt;p&gt;Thành viên: ...&lt;/p&gt;
+&lt;p&gt;...&lt;/p&gt;
+        </pre>
+
+    </div>
+
+    <a href="index.html">← Quay lại trang chính</a>
+
+</div>
+
+</body>
+</html>

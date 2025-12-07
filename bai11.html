@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11: Chèn tệp đa phương tiện và khung nội tuyến</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #EAF6FF;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        h1 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .content {
+            font-size: 20px;
+            line-height: 1.9;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #007BFF;
+            font-size: 20px;
+        }
+
+        pre, code {
+            font-size: 18px;
+            background: #f8f8f8;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            display: block;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Bài 11: Chèn tệp đa phương tiện và khung nội tuyến</h1>
+
+    <div class="content">
+
+        <h2>Luyện tập 1</h2>
+        <p><b>Câu hỏi:</b> Cho ảnh 720×450 px, chèn vào trang với:</p>
+
+        <pre>
+&lt;img src="images/1.png" alt="chiếc lá" width="600"&gt;
+        </pre>
+
+        <p>
+        Khi width = 600 px, trình duyệt tự giữ tỉ lệ.
+        <br><b>Chiều cao:</b> 375 px.
+        <br><b>Kích thước kết quả:</b> 600 × 375 px.
+        </p>
+
+        <hr>
+
+        <h2>Luyện tập 2</h2>
+        <p>Chèn thêm ảnh vào trang giới thiệu bản thân:</p>
+
+        <pre>
+&lt;img src="images/anh1.jpg" alt="Ảnh của tôi"&gt;
+&lt;img src="images/anh2.jpg" alt="Ảnh của tôi"&gt;
+&lt;img src="images/anh3.jpg" alt="Ảnh của tôi"&gt;
+        </pre>
+
+        <p>Ví dụ đầy đủ:</p>
+
+        <pre>
+&lt;h2&gt;Ảnh của tôi&lt;/h2&gt;
+&lt;img src="path/image1.jpg"&gt;
+&lt;img src="path/image2.jpg"&gt;
+&lt;img src="path/image3.jpg"&gt;
+        </pre>
+
+        <hr>
+
+        <h2>Vận dụng</h2>
+        <p>Tạo khung nội tuyến chứa video YouTube:</p>
+
+        <pre>
+&lt;iframe width="560" height="315"
+    src="https://www.youtube.com/embed/video_id"
+    frameborder="0"
+    allowfullscreen&gt;
+&lt;/iframe&gt;
+        </pre>
+
+        <p>Thay <b>video_id</b> bằng mã của video thật.</p>
+
+    </div>
+
+    <a href="index.html">← Quay lại trang chính</a>
+
+</div>
+
+</body>
+</html>
