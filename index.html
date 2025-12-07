@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Trang thông tin nhóm 5 và danh sách bài học của các thành viên.">
     <title>Thành viên nhóm 5</title>
 
     <style>
@@ -85,12 +86,13 @@
             background: #007BFF;
             color: white;
             border: none;
-            padding: 12px 20px;
+            padding: 14px 24px;
             border-radius: 30px;
-            font-size: 16px;
+            font-size: 18px;
             cursor: pointer;
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
             transition: 0.3s;
+            z-index: 200;
         }
 
         #toggleDark:hover {
@@ -103,7 +105,7 @@
         .banner {
             width: 100%;
             height: 260px;
-            background-image: url('banner.jpg'); /* Bạn đổi ảnh nếu muốn */
+            background-image: url('banner.jpg'); /* Thay ảnh nếu muốn */
             background-size: cover;
             background-position: center;
             display: flex;
@@ -129,6 +131,7 @@
             gap: 20px;
             max-width: 1000px;
             margin: 0 auto;
+            padding: 0 10px;
         }
 
         .member {
@@ -146,8 +149,8 @@
         }
 
         .member img {
-            width: 100%;
             max-width: 180px;
+            width: 100%;
             height: 180px;
             object-fit: cover;
             border-radius: 50%;
@@ -172,155 +175,67 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
+        .lessons h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
         .lesson-list a {
             display: block;
-            padding: 30px 15px;
+            padding: 35px 20px;
             background: #f8f9fa;
-            border-radius: 8px;
+            border-radius: 10px;
             text-decoration: none;
             color: #0056d6;
             font-weight: 600;
-            font-size: 18px;
-            margin: 0 auto 15px;
+            font-size: 20px;
+            margin-bottom: 15px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
         }
 
-        footer {
-            margin-top: 50px;
-            background: #007BFF;
-            text-align: center;
-            padding: 20px;
-            color: white;
+        .lesson-list a:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
         }
 
-    </style>
-</head>
-
-<body>
-
-    <!-- MENU -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="#members">Thông tin cá nhân</a></li>
-            <li><a href="#lessons">Bài học</a></li>
-        </ul>
-    </nav>
-
-    <!-- BANNER -->
-    <div class="banner">
-        Nhóm 5
-    </div>
-
-    <h1 id="members">Các thành viên của nhóm</h1>
-
-    <div class="container">
-
-        <div class="member" onclick="location.href='my.html'">
-            <img src="anh1.jpg">
-            <div class="name">Đặng Nguyễn Trúc My</div>
-        </div>
-
-        <div class="member" onclick="location.href='thy.html'">
-            <img src="anh2.jpg">
-            <div class="name">Nguyễn Bảo Thy</div>
-        </div>
-
-        <div class="member" onclick="location.href='truc.html'">
-            <img src="anh3.jpg">
-            <div class="name">Ngô Thanh Trúc</div>
-        </div>
-
-        <div class="member" onclick="location.href='duong.html'">
-            <img src="anh4.jpg">
-            <div class="name">Huỳnh Ánh Dương</div>
-        </div>
-
-        <div class="member" onclick="location.href='han.html'">
-            <img src="anh5.jpg">
-            <div class="name">Nguyễn Huỳnh Bảo Hân</div>
-        </div>
-
-        <div class="member" onclick="location.href='van.html'">
-            <img src="anh6.jpg">
-            <div class="name">Tô Nguyễn Tường Vân</div>
-        </div>
-
-    </div>
-
-    <!-- BÀI HỌC -->
-    <section class="lessons" id="lessons">
-    <h2>Danh sách Bài Học</h2>
-
-    <ul class="lesson-list">
-        <li><a href="https://www.canva.com/design/DAG1lItBaPM/x443j1maq3FFFfSX_jxMvw/edit?utm_source=sharebutton">Bài 1 + 2: Làm quen với trí tuệ nhân tạo</a></li>
-        <li><a>Bài 3: Một số thiết bị mạng thông dụng</a></li>
-        <li><a href="https://www.canva.com/design/DAGzzzrEmJ4/CLsNfeL7fr05u5kddoBdMg/edit?utm_source=sharebutton">Bài 4: Giao thức mạng</a></li>
-        <li><a>Bài 5: Thực hành chia sẻ tài nguyên</a></li>
-        <li><a href="https://www.canva.com/design/DAG2fE9kO9E/view?utm_source=sharebutton">Bài 6: Giao tiếp và ứng xử trong không gian mạng</a></li>
-        <li><a>Bài 7: HTML và cấu trúc trang web</a></li>
-
-<!-- 🔥 NHỮNG BÀI BẠN ĐÃ TẠO FILE HTML -->
-<li><a href="bai8.html">Bài 8: Định dạng văn bản</a></li>
-<li><a href="bai9.html">Bài 9: Tạo danh sách, bảng</a></li>
-<li><a href="bai10.html">Bài 10: Tạo liên kết</a></li>
-<li><a href="bai11.html">Bài 11: Chèn tệp đa phương tiện</a></li>
-<li><a href="bai12.html">Bài 12: Tạo biểu mẫu</a></li>
-<li><a href="bai13.html">Bài 13: Khái niệm, vai trò của CSS</a></li>
-<li><a href="bai14.html">Bài 14: Định dạng văn bản bằng CSS</a></li>
-<li><a href="bai15.html">Bài 15: Tạo màu cho chữ và nền</a></li>
-<li><a href="bai16.html">Bài 16: Định dạng khung</a></li>
-<li><a href="bai17.html">Bài 17: Các mức ưu tiên của bộ chọn</a></li>
-<li><a href="bai18.html">Bài 18: Thực hành tổng hợp thiết kế trang web</a></li>
-
-    </ul>
-</section>
-
-    <!-- FOOTER -->
-    <footer>
-        © 2025 - Nhóm 5 | Thiết kế bởi các thành viên nhóm 5 💙
-    </footer>
-    <!-- … giữ nguyên toàn bộ code trước footer … -->
-
-    <!-- FORM GỬI Ý KIẾN -->
-    <section class="feedback" id="feedback">
-        <h2 style="text-align:center; margin-bottom:20px;">Gửi ý kiến phản hồi</h2>
-        <form class="feedback-form">
-            <input type="text" name="name" placeholder="Họ tên" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="tel" name="phone" placeholder="Số điện thoại">
-            <textarea name="message" placeholder="Ý kiến phản hồi" rows="5" required></textarea>
-            <button type="submit">Gửi phản hồi</button>
-        </form>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        © 2025 - Nhóm 5 | Thiết kế bởi các thành viên nhóm 5 💙
-    </footer>
-
-    <!-- DARK MODE BUTTON -->
-    <button id="toggleDark">Chế độ tối</button>
-
-    <style>
+        /* ------------------------------- */
         /* FORM FEEDBACK */
+        /* ------------------------------- */
         .feedback {
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 25px;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 35px 40px;
             background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .feedback h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .feedback-form .row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
         }
 
         .feedback-form input,
         .feedback-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 15px;
+            flex: 1 1 100%;
+            padding: 18px 20px;
+            font-size: 20px;
+            border-radius: 12px;
             border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
             transition: 0.2s;
         }
 
@@ -331,12 +246,15 @@
         }
 
         .feedback-form button {
+            display: block;
+            width: 220px;
+            margin: 0 auto;
+            padding: 18px 28px;
+            font-size: 20px;
+            border-radius: 30px;
             background: #007BFF;
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-size: 16px;
             cursor: pointer;
             transition: 0.3s;
         }
@@ -370,39 +288,157 @@
         body.dark .feedback-form button:hover {
             background: #333;
         }
+
+        /* ------------------------------- */
+        /* FOOTER */
+        /* ------------------------------- */
+        footer {
+            margin-top: 50px;
+            background: #007BFF;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* ------------------------------- */
+        /* RESPONSIVE */
+        /* ------------------------------- */
+        @media (max-width: 800px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
+</head>
 
-    <script>
-        const btn = document.getElementById("toggleDark");
-        btn.addEventListener("click", () => {
-            document.body.classList.toggle("dark");
-            btn.textContent = document.body.classList.contains("dark")
-                ? "Chế độ sáng"
-                : "Chế độ tối";
-        });
+<body>
 
-        // Gửi form (hiện tại chỉ alert)
-        const feedbackForm = document.querySelector('.feedback-form');
-        feedbackForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Cảm ơn bạn đã gửi phản hồi!');
-            feedbackForm.reset();
-        });
-    </script>
+    <!-- MENU -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="#members">Thông tin cá nhân</a></li>
+            <li><a href="#lessons">Bài học</a></li>
+        </ul>
+    </nav>
 
-</body>
-</html>
+    <!-- BANNER -->
+    <div class="banner">
+        Nhóm 5
+    </div>
+
+    <h1 id="members">Các thành viên của nhóm</h1>
+
+    <div class="container">
+
+        <div class="member" onclick="location.href='my.html'">
+            <img src="anh1.jpg" alt="Đặng Nguyễn Trúc My">
+            <div class="name">Đặng Nguyễn Trúc My</div>
+        </div>
+
+        <div class="member" onclick="location.href='thy.html'">
+            <img src="anh2.jpg" alt="Nguyễn Bảo Thy">
+            <div class="name">Nguyễn Bảo Thy</div>
+        </div>
+
+        <div class="member" onclick="location.href='truc.html'">
+            <img src="anh3.jpg" alt="Ngô Thanh Trúc">
+            <div class="name">Ngô Thanh Trúc</div>
+        </div>
+
+        <div class="member" onclick="location.href='duong.html'">
+            <img src="anh4.jpg" alt="Huỳnh Ánh Dương">
+            <div class="name">Huỳnh Ánh Dương</div>
+        </div>
+
+        <div class="member" onclick="location.href='han.html'">
+            <img src="anh5.jpg" alt="Nguyễn Huỳnh Bảo Hân">
+            <div class="name">Nguyễn Huỳnh Bảo Hân</div>
+        </div>
+
+        <div class="member" onclick="location.href='van.html'">
+            <img src="anh6.jpg" alt="Tô Nguyễn Tường Vân">
+            <div class="name">Tô Nguyễn Tường Vân</div>
+        </div>
+
+    </div>
+
+    <!-- BÀI HỌC -->
+    <section class="lessons" id="lessons">
+        <h2>Danh sách Bài Học</h2>
+
+        <ul class="lesson-list">
+            <li><a href="https://www.canva.com/design/DAG1lItBaPM/x443j1maq3FFFfSX_jxMvw/edit?utm_source=sharebutton" target="_blank">Bài 1 + 2: Làm quen với trí tuệ nhân tạo</a></li>
+            <li><a href="#">Bài 3: Một số thiết bị mạng thông dụng</a></li>
+            <li><a href="https://www.canva.com/design/DAGzzzrEmJ4/CLsNfeL7fr05u5kddoBdMg/edit?utm_source=sharebutton" target="_blank">Bài 4: Giao thức mạng</a></li>
+            <li><a href="#">Bài 5: Thực hành chia sẻ tài nguyên</a></li>
+            <li><a href="https://www.canva.com/design/DAG2fE9kO9E/view?utm_source=sharebutton" target="_blank">Bài 6: Giao tiếp và ứng xử trong không gian mạng</a></li>
+            <li><a href="#">Bài 7: HTML và cấu trúc trang web</a></li>
+
+            <!-- NHỮNG BÀI BẠN ĐÃ TẠO FILE HTML -->
+            <li><a href="bai8.html">Bài 8: Định dạng văn bản</a></li>
+            <li><a href="bai9.html">Bài 9: Tạo danh sách, bảng</a></li>
+            <li><a href="bai10.html">Bài 10: Tạo liên kết</a></li>
+            <li><a href="bai11.html">Bài 11: Chèn tệp đa phương tiện</a></li>
+            <li><a href="bai12.html">Bài 12: Tạo biểu mẫu</a></li>
+            <li><a href="bai13.html">Bài 13: Khái niệm, vai trò của CSS</a></li>
+            <li><a href="bai14.html">Bài 14: Định dạng văn bản bằng CSS</a></li>
+            <li><a href="bai15.html">Bài 15: Tạo màu cho chữ và nền</a></li>
+            <li><a href="bai16.html">Bài 16: Định dạng khung</a></li>
+            <li><a href="bai17.html">Bài 17: Các mức ưu tiên của bộ chọn</a></li>
+            <li><a href="bai18.html">Bài 18: Thực hành tổng hợp thiết kế trang web</a></li>
+        </ul>
+    </section>
+
+    <!-- FORM GỬI Ý KIẾN -->
+    <section class="feedback" id="feedback">
+        <h2>Gửi ý kiến phản hồi</h2>
+        <form class="feedback-form">
+            <div class="row">
+                <input type="text" name="name" placeholder="Họ tên" required>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="row">
+                <input type="tel" name="phone" placeholder="Số điện thoại">
+            </div>
+            <div class="row">
+                <textarea name="message" placeholder="Ý kiến phản hồi" rows="6" required></textarea>
+            </div>
+            <button type="submit">Gửi phản hồi</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 - Nhóm 5 | Thiết kế bởi các thành viên nhóm 5 💙
+    </footer>
 
     <!-- DARK MODE BUTTON -->
     <button id="toggleDark">Chế độ tối</button>
 
     <script>
+        // Dark mode button
         const btn = document.getElementById("toggleDark");
         btn.addEventListener("click", () => {
             document.body.classList.toggle("dark");
             btn.textContent = document.body.classList.contains("dark")
                 ? "Chế độ sáng"
                 : "Chế độ tối";
+        });
+
+        // Gửi form (hiện alert)
+        const feedbackForm = document.querySelector('.feedback-form');
+        feedbackForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã gửi phản hồi!');
+            feedbackForm.reset();
         });
     </script>
 
