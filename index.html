@@ -7,24 +7,24 @@
     <title>Thành viên nhóm 5</title>
 
     <style>
-        /* === CHỦ ĐỀ GIÁNG SINH === */
+        /* === CHỦ ĐỀ GIÁNG SINH: ĐỎ – TRẮNG – XANH === */
         body {
             font-family: Arial, sans-serif;
-            background-color: #111; /* nền tối để nổi bật chữ đỏ trắng */
-            color: #fff; /* chữ mặc định trắng */
-            transition: all 0.3s;
+            background-color: #111; /* nền tối */
+            color: #fff; /* chữ trắng mặc định */
             margin: 0;
             padding: 0;
+            transition: all 0.3s;
         }
 
-        h1, h2, h3 {
-            color: #ff0000; /* tiêu đề đỏ nổi bật */
-            text-shadow: 2px 2px 5px #fff; /* tạo hiệu ứng lấp lánh */
+        h1, h2, h3, .banner {
+            color: #ff0000; /* đỏ nổi bật */
+            text-shadow: 2px 2px 5px #fff; /* hiệu ứng lấp lánh */
         }
 
         nav {
             width: 100%;
-            background: #ff0000;
+            background: #007BFF; /* xanh dương navbar */
             padding: 15px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             position: sticky;
@@ -42,7 +42,7 @@
         }
 
         nav ul li a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
@@ -130,7 +130,7 @@
         .name {
             font-size: 24px; 
             font-weight: bold;
-            color: #ff0000;
+            color: #00ff00; /* xanh lá cho tên thành viên */
         }
 
         /* PROFILE CARD */
@@ -178,7 +178,7 @@
 
         .profile-card a {
             font-size: 18px;
-            color: #ff0000;
+            color: #00ff00; /* xanh lá link quay lại */
             text-decoration: none;
         }
 
@@ -206,7 +206,7 @@
             background: rgba(255,255,255,0.1);
             border-radius: 10px;
             text-decoration: none;
-            color: #ff4444;
+            color: #00ff00; /* xanh lá cho bài học */
             font-weight: bold;
             font-size: 20px; 
             margin-bottom: 15px;
@@ -216,7 +216,7 @@
 
         .lesson-list a:hover {
             background: rgba(255,255,255,0.3);
-            color: #fff;
+            color: #ff0000; /* đỏ khi hover */
             transform: scale(1.02); 
         }
 
@@ -251,7 +251,7 @@
             padding: 16px 20px; 
             font-size: 18px; 
             border-radius: 12px;
-            border: 1px solid #ff4444;
+            border: 1px solid #00ff00; /* xanh lá viền input */
             background: rgba(255,255,255,0.1);
             color: #fff;
             transition: 0.2s;
@@ -290,7 +290,7 @@
         /* FOOTER */
         footer {
             margin-top: 50px;
-            background: #ff0000;
+            background: #007BFF;
             text-align: center;
             padding: 25px; 
             color: white;
@@ -346,6 +346,45 @@
                 font-size: 18px;
             }
         }
+
+        /* DARK MODE */
+        body.dark {
+            background-color: #1e1f22;
+            color: #fff;
+        }
+
+        body.dark .member {
+            background: #2b2c30;
+        }
+
+        body.dark .member img {
+            border-color: #007BFF;
+        }
+
+        body.dark .name {
+            color: #00ff00;
+        }
+
+        body.dark .lessons, body.dark .feedback, body.dark .profile-card {
+            background: #2b2c30;
+        }
+
+        body.dark .lesson-list a {
+            background: #3a3b40;
+            color: #00ff00;
+        }
+
+        body.dark .lesson-list a:hover {
+            color: #ff0000;
+        }
+
+        body.dark nav {
+            background: #111;
+        }
+
+        body.dark footer {
+            background: #111;
+        }
     </style>
 </head>
 
@@ -396,12 +435,10 @@
             <img src="anh6.jpg" alt="Tô Nguyễn Tường Vân">
             <div class="name">Tô Nguyễn Tường Vân</div>
         </div>
-
     </div>
 
     <section class="lessons" id="lessons">
         <h2>Danh sách Bài Học</h2>
-
         <ul class="lesson-list">
             <li><a href="https://www.canva.com/design/DAG1lItBaPM/x443j1maq3FFFfSX_jxMvw/edit?utm_source=sharebutton" target="_blank">Bài 1 + 2: Làm quen với trí tuệ nhân tạo</a></li>
             <li><a href="#">Bài 3: Một số thiết bị mạng thông dụng</a></li>
@@ -467,3 +504,4 @@
 
 </body>
 </html>
+
