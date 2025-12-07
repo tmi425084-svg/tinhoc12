@@ -9,22 +9,45 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #EAF6FF;
+            
+            /* === ĐÃ CHỈNH SỬA: NỀN BẦU TRỜI === */
+            background-image: url('sky-background.jpg'); /* ĐỔI ĐƯỜNG DẪN ẢNH BẦU TRỜI CỦA BẠN */
+            background-size: cover; 
+            background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: #EAF6FF; /* Màu dự phòng nếu ảnh không tải */
+            /* ================================== */
+
             margin: 0;
             padding: 0;
             transition: background 0.3s, color 0.3s;
+            color: #333; /* Đặt màu chữ mặc định để dễ đọc trên nền sáng */
         }
 
         /* DARK MODE */
         body.dark {
             background: #1e1f22;
             color: white;
+            background-image: none; /* Tắt nền bầu trời khi ở chế độ tối */
         }
 
         body.dark .member {
             background: #2b2c30;
             color: white;
         }
+
+        /* Thêm độ trong suốt nhẹ cho khối nội dung trên nền bầu trời */
+        .lessons, .feedback, .member {
+             background: rgba(255, 255, 255, 0.9); 
+        }
+        
+        /* Đảm bảo Dark Mode vẫn hoạt động trên các khối */
+        body.dark .lessons, 
+        body.dark .feedback {
+            background: #2b2c30; 
+        }
+
 
         body.dark .lessons {
             background: #2b2c30;
@@ -101,16 +124,17 @@
         .banner {
             width: 100%;
             height: 300px;
-            background-image: url('/mnt/data/32e96f17-c310-431c-ad2c-b9878d0819e6.png'); /* ảnh banner mới */
+            /* Đảm bảo banner vẫn dễ đọc trên nền bầu trời */
+            background-image: url('/mnt/data/32e96f17-c310-431c-ad2c-b9878d0819e6.png'); 
             background-size: cover;
             background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            font-size: 48px; /* Tăng cỡ chữ banner */
+            font-size: 48px; 
             font-weight: bold;
-            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.8); /* Tăng shadow cho nổi bật */
         }
 
         h1 {
@@ -122,67 +146,103 @@
         .container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px; /* Tăng khoảng cách */
-            max-width: 1200px; /* Tăng kích thước tối đa của container */
+            gap: 30px; 
+            max-width: 1200px; 
             margin: 0 auto;
             padding: 0 20px;
         }
 
         .member {
-            background: #fff;
-            padding: 20px; /* Tăng padding */
-            border-radius: 15px; /* Bo góc nhiều hơn */
+            padding: 20px; 
+            border-radius: 15px; 
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Đổ bóng mạnh hơn */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
             cursor: pointer;
             transition: 0.3s;
         }
 
         .member:hover {
-            transform: scale(1.05); /* Hiệu ứng lớn hơn khi hover */
+            transform: scale(1.05); 
         }
 
         .member img {
-            max-width: 200px; /* Tăng kích thước ảnh */
+            max-width: 200px; 
             width: 100%;
-            height: 200px; /* Tăng kích thước ảnh */
+            height: 200px; 
             object-fit: cover;
             border-radius: 50%;
             margin-bottom: 15px;
-            border: 5px solid #007BFF; /* Thêm viền cho ảnh nổi bật */
+            border: 5px solid #007BFF; 
         }
 
         .name {
-            font-size: 24px; /* Tăng cỡ chữ tên */
+            font-size: 24px; 
             font-weight: bold;
             color: #007BFF;
         }
         
-        /* CÁC TRANG PROFILE THÀNH VIÊN - CSS GIẢ ĐỊNH */
-        /* Giả định CSS này áp dụng cho các trang 'my.html', 'thy.html', v.v. */
-        /* Trong các trang đó, bạn nên đặt nội dung chính trong một div có class là .profile-content và áp dụng CSS này */
-        .profile-content {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 30px;
-            line-height: 1.8; /* Tăng khoảng cách dòng */
-            font-size: 18px; /* Tăng cỡ chữ nội dung */
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        /* === ĐÃ BỔ SUNG: CSS CHO TRANG PROFILE CÁ NHÂN (PHÓNG TO) === */
+        /* Class này cần được sử dụng trong các file my.html, thy.html, v.v. */
+        .profile-card {
+            max-width: 700px; /* Tăng kích thước rộng hơn */
+            width: 90%; 
+            margin: 50px auto;
+            padding: 40px; /* Tăng padding */
+            line-height: 1.8; 
+            font-size: 20px; /* Phóng to cỡ chữ nội dung chính */
+            background: rgba(255, 255, 255, 0.95); /* Thêm độ trong suốt nhẹ */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Đổ bóng mạnh hơn */
+            text-align: center; /* Đảm bảo nội dung profile cũng được canh giữa */
         }
 
-        body.dark .profile-content {
+        body.dark .profile-card {
             background: #2b2c30;
             color: white;
         }
         
-        /* LESSON LIST - ĐÃ CHỈNH SỬA */
+        .profile-card img {
+            width: 200px; /* Ảnh profile lớn hơn */
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            border: 6px solid #007BFF;
+        }
+
+        .profile-card h2 {
+            font-size: 32px; /* Tên rất to */
+            margin-bottom: 15px;
+            color: #007BFF;
+        }
+        
+        .profile-card p {
+            font-size: 20px; /* Chữ to, dễ đọc */
+            margin: 10px 0;
+        }
+        
+        .profile-card .quote-text {
+            font-size: 22px; /* Châm ngôn to nhất */
+            font-style: italic;
+            margin-top: 25px;
+            padding: 0 30px;
+            color: #555;
+        }
+
+        body.dark .profile-card .quote-text {
+             color: #ccc;
+        }
+
+        .profile-card a {
+            font-size: 18px; /* Link quay lại trang chính */
+        }
+        /* ======================================================== */
+        
+        /* LESSON LIST */
         .lessons {
             margin: 40px auto;
-            padding: 25px; /* Tăng padding */
+            padding: 25px; 
             max-width: 1000px;
-            background: #ffffff;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
@@ -190,44 +250,43 @@
         .lessons h2 {
             text-align: center;
             margin-bottom: 25px;
-            font-size: 32px; /* Tăng cỡ chữ tiêu đề */
+            font-size: 32px; 
             font-weight: bold;
             color: #007BFF;
         }
 
         .lesson-list a {
             display: block;
-            padding: 15px 20px; /* Điều chỉnh padding */
+            padding: 15px 20px; 
             background: #f8f9fa;
             border-radius: 10px;
             text-decoration: none;
             color: #0056d6;
             font-weight: 600;
-            font-size: 20px; /* Tăng cỡ chữ bài học */
+            font-size: 20px; 
             margin-bottom: 15px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             transition: 0.2s;
         }
 
         .lesson-list a:hover {
-            transform: scale(1.01); /* Điều chỉnh hiệu ứng hover nhỏ hơn */
+            transform: scale(1.01); 
             opacity: 0.9;
         }
 
-        /* FORM FEEDBACK - ĐÃ CHỈNH SỬA */
+        /* FORM FEEDBACK */
         .feedback {
             max-width: 800px;
             margin: 50px auto;
-            padding: 40px 45px; /* Tăng padding */
-            background: #ffffff;
+            padding: 40px 45px; 
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
         .feedback h2 {
             text-align: center;
-            margin-bottom: 30px; /* Tăng khoảng cách dưới tiêu đề */
-            font-size: 32px; /* Tăng cỡ chữ tiêu đề */
+            margin-bottom: 30px; 
+            font-size: 32px; 
             font-weight: bold;
             color: #007BFF;
         }
@@ -236,21 +295,21 @@
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
-            margin-bottom: 20px; /* Tăng khoảng cách giữa các hàng */
+            margin-bottom: 20px; 
         }
 
         .feedback-form input,
         .feedback-form textarea {
             flex: 1 1 100%;
-            padding: 16px 20px; /* Điều chỉnh padding cho input */
-            font-size: 18px; /* Giảm cỡ chữ input một chút để cân đối hơn */
+            padding: 16px 20px; 
+            font-size: 18px; 
             border-radius: 12px;
             border: 1px solid #ccc;
             transition: 0.2s;
         }
         
         .feedback-form textarea {
-            min-height: 150px; /* Tăng chiều cao tối thiểu cho textarea */
+            min-height: 150px; 
         }
 
 
@@ -262,9 +321,9 @@
 
         .feedback-form button {
             display: block;
-            width: 240px; /* Tăng chiều rộng nút */
+            width: 240px; 
             margin: 10px auto 0;
-            padding: 16px 28px; /* Điều chỉnh padding nút */
+            padding: 16px 28px; 
             font-size: 20px;
             border-radius: 30px;
             background: #007BFF;
@@ -310,15 +369,15 @@
             margin-top: 50px;
             background: #007BFF;
             text-align: center;
-            padding: 25px; /* Tăng padding footer */
+            padding: 25px; 
             color: white;
             font-size: 18px;
         }
 
-        /* RESPONSIVE - ĐÃ CHỈNH SỬA */
-        @media (max-width: 850px) { /* Thay đổi điểm ngắt */
+        /* RESPONSIVE */
+        @media (max-width: 850px) { 
             .container {
-                grid-template-columns: repeat(2, 1fr); /* 2 cột trên tablet */
+                grid-template-columns: repeat(2, 1fr); 
                 gap: 20px;
             }
             .member img {
@@ -330,9 +389,9 @@
             }
         }
 
-        @media (max-width: 550px) { /* Thay đổi điểm ngắt */
+        @media (max-width: 550px) { 
             .container {
-                grid-template-columns: 1fr; /* 1 cột trên điện thoại nhỏ */
+                grid-template-columns: 1fr; 
                 max-width: 400px;
             }
             nav ul {
@@ -347,6 +406,20 @@
             }
             .feedback {
                 padding: 25px;
+            }
+            .profile-card { /* Điều chỉnh trên di động */
+                 max-width: 90%;
+                 padding: 20px;
+            }
+            .profile-card img {
+                width: 150px;
+                height: 150px;
+            }
+            .profile-card h2 {
+                font-size: 28px;
+            }
+            .profile-card p, .profile-card .quote-text {
+                font-size: 18px;
             }
         }
     </style>
@@ -369,7 +442,6 @@
     <h1 id="members">Các thành viên của nhóm</h1>
 
     <div class="container">
-
         <div class="member" onclick="location.href='my.html'">
             <img src="anh1.jpg" alt="Đặng Nguyễn Trúc My">
             <div class="name">Đặng Nguyễn Trúc My</div>
