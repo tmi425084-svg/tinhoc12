@@ -280,6 +280,118 @@
     <footer>
         © 2025 - Nhóm 5 | Thiết kế bởi các thành viên nhóm 5 💙
     </footer>
+    <!-- … giữ nguyên toàn bộ code trước footer … -->
+
+    <!-- FORM GỬI Ý KIẾN -->
+    <section class="feedback" id="feedback">
+        <h2 style="text-align:center; margin-bottom:20px;">Gửi ý kiến phản hồi</h2>
+        <form class="feedback-form">
+            <input type="text" name="name" placeholder="Họ tên" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Số điện thoại">
+            <textarea name="message" placeholder="Ý kiến phản hồi" rows="5" required></textarea>
+            <button type="submit">Gửi phản hồi</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 - Nhóm 5 | Thiết kế bởi các thành viên nhóm 5 💙
+    </footer>
+
+    <!-- DARK MODE BUTTON -->
+    <button id="toggleDark">Chế độ tối</button>
+
+    <style>
+        /* FORM FEEDBACK */
+        .feedback {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        .feedback-form input:focus,
+        .feedback-form textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .feedback-form button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .feedback-form button:hover {
+            background: #0056b3;
+        }
+
+        /* DARK MODE FORM */
+        body.dark .feedback {
+            background: #2b2c30;
+            color: white;
+        }
+
+        body.dark .feedback-form input,
+        body.dark .feedback-form textarea {
+            background: #3a3b40;
+            border: 1px solid #555;
+            color: white;
+        }
+
+        body.dark .feedback-form input::placeholder,
+        body.dark .feedback-form textarea::placeholder {
+            color: #ccc;
+        }
+
+        body.dark .feedback-form button {
+            background: #111;
+        }
+
+        body.dark .feedback-form button:hover {
+            background: #333;
+        }
+    </style>
+
+    <script>
+        const btn = document.getElementById("toggleDark");
+        btn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            btn.textContent = document.body.classList.contains("dark")
+                ? "Chế độ sáng"
+                : "Chế độ tối";
+        });
+
+        // Gửi form (hiện tại chỉ alert)
+        const feedbackForm = document.querySelector('.feedback-form');
+        feedbackForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã gửi phản hồi!');
+            feedbackForm.reset();
+        });
+    </script>
+
+</body>
+</html>
 
     <!-- DARK MODE BUTTON -->
     <button id="toggleDark">Chế độ tối</button>
@@ -296,5 +408,3 @@
 
 </body>
 </html>
-
-
