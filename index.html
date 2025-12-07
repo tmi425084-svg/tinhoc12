@@ -1,544 +1,625 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Trang thông tin nhóm 5 và danh sách bài học của các thành viên.">
-    <title>Thành viên nhóm 5</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Trang thông tin nhóm 5 và danh sách bài học của các thành viên.">
+    <title>Thành viên nhóm 5</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            
-            /* === ĐÃ CHỈNH SỬA: NỀN BẦU TRỜI === */
-            background-image: url('sky-background.jpg'); /* ĐỔI ĐƯỜNG DẪN ẢNH BẦU TRỜI CỦA BẠN */
-            background-size: cover; 
-            background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn */
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-color: #EAF6FF; /* Màu dự phòng nếu ảnh không tải */
-            /* ================================== */
+    <style>
+        /* ========================================================= */
+        /* === CSS ĐÃ CHỈNH SỬA CHO CHỦ ĐỀ GIÁNG SINH (TRẮNG - XANH) === */
+        /* ========================================================= */
+        body {
+            font-family: Arial, sans-serif;
+            
+            /* NỀN BẦU TRỜI */
+            background-image: url('sky-background.jpg'); 
+            background-size: cover; 
+            background-attachment: fixed; 
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: #EAF6FF; /* Màu dự phòng */
 
-            margin: 0;
-            padding: 0;
-            transition: background 0.3s, color 0.3s;
-            color: #333; /* Đặt màu chữ mặc định để dễ đọc trên nền sáng */
+            margin: 0;
+            padding: 0;
+            transition: background 0.3s, color 0.3s;
+            
+            /* === MÀU FONT CHÍNH TRÊN NỀN BẦU TRỜI === */
+            color: #F0F0F0; /* Màu chữ chính gần trắng */
+            /* ======================================= */
+        }
+
+        /* DARK MODE */
+        body.dark {
+            background: #1e1f22;
+            color: white;
+            background-image: none; 
+        }
+
+        /* Thêm độ trong suốt cho khối nội dung trên nền bầu trời */
+        .lessons, .feedback, .member, .profile-card {
+            /* Nền tối mờ để chữ trắng nổi lên */
+            background: rgba(0, 0, 0, 0.5); 
+            color: #F0F0F0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Đổ bóng mạnh hơn */
+        }
+        
+        /* Đảm bảo Dark Mode vẫn hoạt động trên các khối */
+        body.dark .lessons, 
+        body.dark .feedback,
+        body.dark .member, 
+        body.dark .profile-card {
+            background: #2b2c30; 
+            color: white;
+        }
+        
+        body.dark .lesson-list a {
+            background: #3a3b40;
+            color: #fff;
+        }
+
+        /* NAVIGATION BAR */
+        nav {
+            /* MÀU XANH DƯƠNG ĐẬM GIÁNG SINH */
+            background: #0056b3; 
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        body.dark nav {
+            background: #111;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        /* DARK MODE BUTTON */
+        #toggleDark {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            /* MÀU XANH LÁ CÂY GIÁNG SINH */
+            background: #008000; 
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            z-index: 200;
+        }
+        
+        body.dark #toggleDark {
+            background: #333; 
+        }
+
+        #toggleDark:hover {
+            transform: scale(1.05);
+            background: #005600; 
+        }
+        
+        body.dark #toggleDark:hover {
+            background: #555;
+        }
+
+        /* BANNER */
+        .banner {
+            width: 100%;
+            height: 300px;
+            background-image: url('/mnt/data/32e96f17-c310-431c-ad2c-b9878d0819e6.png'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 48px; 
+            font-weight: bold;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.8); 
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+            /* MÀU XANH LÁ CÂY GIÁNG SINH */
+            color: #008000; 
+        }
+
+        body.dark h1 {
+            color: #00ff00; 
+        }
+
+        /* MEMBERS GRID */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px; 
+            max-width: 1200px; 
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .member {
+            padding: 20px; 
+            border-radius: 15px; 
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .member:hover {
+            transform: scale(1.05); 
+            background: rgba(0, 0, 0, 0.7); 
+        }
+        
+        body.dark .member:hover {
+            background: #3a3b40;
+        }
+
+        .member img {
+            max-width: 200px; 
+            width: 100%;
+            height: 200px; 
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            /* VIỀN XANH DƯƠNG GIÁNG SINH */
+            border: 5px solid #0056b3; 
+        }
+
+        .name {
+            font-size: 24px; 
+            font-weight: bold;
+            /* MÀU XANH LÁ CÂY GIÁNG SINH */
+            color: #008000;
+        }
+        
+        body.dark .name {
+            color: #00ff00;
+        }
+
+        /* CSS CHO TRANG PROFILE CÁ NHÂN */
+        .profile-card {
+            max-width: 700px; 
+            width: 90%; 
+            margin: 50px auto;
+            padding: 40px; 
+            line-height: 1.8; 
+            font-size: 20px; 
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+            text-align: center; 
+        }
+
+        .profile-card img {
+            width: 200px; 
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            /* VIỀN XANH DƯƠNG GIÁNG SINH */
+            border: 6px solid #0056b3;
+        }
+
+        .profile-card h2 {
+            font-size: 32px; 
+            margin-bottom: 15px;
+            /* MÀU XANH LÁ CÂY GIÁNG SINH */
+            color: #008000;
+        }
+
+        .profile-card p {
+            font-size: 20px; 
+            margin: 10px 0;
+            color: #F0F0F0;
+        }
+        
+        .profile-card .quote-text {
+            font-size: 22px; 
+            font-style: italic;
+            margin-top: 25px;
+            padding: 0 30px;
+            color: #cccccc; 
+        }
+
+        body.dark .profile-card .quote-text {
+             color: #aaa;
+        }
+
+        .profile-card a {
+            font-size: 18px; 
+            color: #00ff00; 
+        }
+        
+        /* LESSON LIST */
+        .lessons {
+            margin: 40px auto;
+            padding: 25px; 
+            max-width: 1000px;
+            border-radius: 10px;
+        }
+
+        .lessons h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 32px; 
+            font-weight: bold;
+            /* MÀU XANH LÁ CÂY GIÁNG SINH */
+            color: #008000;
+        }
+        
+        body.dark .lessons h2 {
+            color: #00ff00;
+        }
+
+        .lesson-list a {
+            display: block;
+            padding: 15px 20px; 
+            background: rgba(255, 255, 255, 0.1); 
+            border-radius: 10px;
+            text-decoration: none;
+            color: #ffffff; 
+            font-weight: 600;
+            font-size: 20px; 
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            transition: 0.2s;
+        }
+
+        .lesson-list a:hover {
+            transform: scale(1.01); 
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* FORM FEEDBACK */
+        .feedback {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px 45px; 
+            border-radius: 15px;
+        }
+
+        .feedback h2 {
+            text-align: center;
+            margin-bottom: 30px; 
+            font-size: 32px; 
+            font-weight: bold;
+            /* MÀU XANH LÁ CÂY GIÁNG SINH */
+            color: #008000;
+        }
+        
+        body.dark .feedback h2 {
+            color: #00ff00;
+        }
+
+        .feedback-form .row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px; 
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            flex: 1 1 100%;
+            padding: 16px 20px; 
+            font-size: 18px; 
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1); 
+            border: 1px solid #777;
+            color: white;
+            transition: 0.2s;
+        }
+        
+        .feedback-form textarea {
+            min-height: 150px; 
+        }
+
+        .feedback-form input:focus,
+        .feedback-form textarea:focus {
+            /* XANH LÁ CÂY KHI FOCUS */
+            border-color: #008000;
+            outline: none;
+        }
+        
+        .feedback-form button {
+            display: block;
+            width: 240px; 
+            margin: 10px auto 0;
+            padding: 16px 28px; 
+            font-size: 20px;
+            border-radius: 30px;
+            /* MÀU XANH LÁ CÂY GIÁNG SINH */
+            background: #008000; 
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .feedback-form button:hover {
+            background: #005600; 
+        }
+
+        /* DARK MODE FORM */
+        body.dark .feedback-form input,
+        body.dark .feedback-form textarea {
+            background: #3a3b40;
+            border: 1px solid #555;
+            color: white;
+        }
+
+        body.dark .feedback-form button {
+            background: #008000;
+        }
+
+        body.dark .feedback-form button:hover {
+            background: #005600;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 50px;
+            /* MÀU XANH DƯƠNG ĐẬM GIÁNG SINH */
+            background: #0056b3; 
+            text-align: center;
+            padding: 25px; 
+            color: white;
+            font-size: 18px;
+        }
+        
+        body.dark footer {
+            background: #111;
+        }
+
+        /* ========================================================= */
+        /* === CSS ĐÃ BỔ SUNG: CÂY THÔNG & TUẦN LỘC === */
+        /* ========================================================= */
+
+        /* Hiệu ứng chuyển động (Tuần lộc bay) */
+        @keyframes sway {
+            0% { transform: translateY(0) rotate(1deg); }
+            50% { transform: translateY(-10px) rotate(-1deg); }
+            100% { transform: translateY(0) rotate(1deg); }
         }
 
-        /* DARK MODE */
-        body.dark {
-            background: #1e1f22;
-            color: white;
-            background-image: none; /* Tắt nền bầu trời khi ở chế độ tối */
+        @keyframes moveRightLeft {
+            0% { right: -50px; }
+            50% { right: 100px; }
+            100% { right: -50px; }
         }
 
-        body.dark .member {
-            background: #2b2c30;
-            color: white;
-        }
-
-        /* Thêm độ trong suốt nhẹ cho khối nội dung trên nền bầu trời */
-        .lessons, .feedback, .member {
-             background: rgba(255, 255, 255, 0.9); 
-        }
-        
-        /* Đảm bảo Dark Mode vẫn hoạt động trên các khối */
-        body.dark .lessons, 
-        body.dark .feedback {
-            background: #2b2c30; 
-        }
-
-
-        body.dark .lessons {
-            background: #2b2c30;
-        }
-
-        body.dark .lesson-list a {
-            background: #3a3b40;
-            color: #fff;
-        }
-
-        body.dark nav {
-            background: #111;
-        }
-
-        body.dark footer {
-            background: #111;
-        }
-
-        /* NAVIGATION BAR */
-        nav {
-            width: 100%;
-            background: #007BFF;
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-            opacity: 0.8;
-        }
-
-        /* DARK MODE BUTTON */
-        #toggleDark {
+        /* Vị trí Cây Thông (Góc phải dưới) */
+        #christmas-tree {
             position: fixed;
-            right: 20px;
-            bottom: 20px;
-            background: #007BFF;
-            color: white;
-            border: none;
-            padding: 14px 24px;
-            border-radius: 30px;
-            font-size: 18px;
-            cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            transition: 0.3s;
-            z-index: 200;
-        }
-
-        #toggleDark:hover {
-            transform: scale(1.05);
-        }
-
-        /* BANNER */
-        .banner {
-            width: 100%;
-            height: 300px;
-            /* Đảm bảo banner vẫn dễ đọc trên nền bầu trời */
-            background-image: url('/mnt/data/32e96f17-c310-431c-ad2c-b9878d0819e6.png'); 
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 48px; 
-            font-weight: bold;
-            text-shadow: 3px 3px 10px rgba(0,0,0,0.8); /* Tăng shadow cho nổi bật */
-        }
-
-        h1 {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        /* MEMBERS GRID - ĐÃ CHỈNH SỬA */
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px; 
-            max-width: 1200px; 
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .member {
-            padding: 20px; 
-            border-radius: 15px; 
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .member:hover {
-            transform: scale(1.05); 
-        }
-
-        .member img {
-            max-width: 200px; 
-            width: 100%;
-            height: 200px; 
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 5px solid #007BFF; 
-        }
-
-        .name {
-            font-size: 24px; 
-            font-weight: bold;
-            color: #007BFF;
+            bottom: 60px; /* Nằm trên nút Dark Mode */
+            right: 150px;
+            width: 80px;
+            height: 100px;
+            z-index: 100;
+            background: url('tree.png') no-repeat center center; /* Thay bằng đường dẫn ảnh cây thông của bạn */
+            background-size: contain;
+            /* Thêm hiệu ứng lắc lư nhẹ */
+            animation: sway 4s ease-in-out infinite; 
         }
         
-        /* === ĐÃ BỔ SUNG: CSS CHO TRANG PROFILE CÁ NHÂN (PHÓNG TO) === */
-        /* Class này cần được sử dụng trong các file my.html, thy.html, v.v. */
-        .profile-card {
-            max-width: 700px; /* Tăng kích thước rộng hơn */
-            width: 90%; 
-            margin: 50px auto;
-            padding: 40px; /* Tăng padding */
-            line-height: 1.8; 
-            font-size: 20px; /* Phóng to cỡ chữ nội dung chính */
-            background: rgba(255, 255, 255, 0.95); /* Thêm độ trong suốt nhẹ */
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Đổ bóng mạnh hơn */
-            text-align: center; /* Đảm bảo nội dung profile cũng được canh giữa */
-        }
-
-        body.dark .profile-card {
-            background: #2b2c30;
-            color: white;
+        /* Vị trí Tuần Lộc (Bay ngang màn hình) */
+        #reindeer {
+            position: fixed;
+            top: 150px;
+            width: 100px;
+            height: 50px;
+            z-index: 50;
+            background: url('reindeer.png') no-repeat center center; /* Thay bằng đường dẫn ảnh tuần lộc của bạn */
+            background-size: contain;
+            /* Animation di chuyển từ phải qua trái và ngược lại */
+            animation: moveRightLeft 15s linear infinite, 
+                       sway 3s ease-in-out infinite; 
         }
         
-        .profile-card img {
-            width: 200px; /* Ảnh profile lớn hơn */
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 25px;
-            border: 6px solid #007BFF;
-        }
+        /* NOTE: Vì mình không có ảnh của bạn, nên bạn cần tải 2 ảnh sau:
+           1. Ảnh cây thông (tree.png)
+           2. Ảnh tuần lộc (reindeer.png)
+           Đặt 2 ảnh này cùng thư mục với file index.html
+        */
 
-        .profile-card h2 {
-            font-size: 32px; /* Tên rất to */
-            margin-bottom: 15px;
-            color: #007BFF;
-        }
-        
-        .profile-card p {
-            font-size: 20px; /* Chữ to, dễ đọc */
-            margin: 10px 0;
-        }
-        
-        .profile-card .quote-text {
-            font-size: 22px; /* Châm ngôn to nhất */
-            font-style: italic;
-            margin-top: 25px;
-            padding: 0 30px;
-            color: #555;
-        }
-
-        body.dark .profile-card .quote-text {
-             color: #ccc;
-        }
-
-        .profile-card a {
-            font-size: 18px; /* Link quay lại trang chính */
-        }
-        /* ======================================================== */
-        
-        /* LESSON LIST */
-        .lessons {
-            margin: 40px auto;
-            padding: 25px; 
-            max-width: 1000px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-        }
-
-        .lessons h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            font-size: 32px; 
-            font-weight: bold;
-            color: #007BFF;
-        }
-
-        .lesson-list a {
-            display: block;
-            padding: 15px 20px; 
-            background: #f8f9fa;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #0056d6;
-            font-weight: 600;
-            font-size: 20px; 
-            margin-bottom: 15px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            transition: 0.2s;
-        }
-
-        .lesson-list a:hover {
-            transform: scale(1.01); 
-            opacity: 0.9;
-        }
-
-        /* FORM FEEDBACK */
-        .feedback {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 40px 45px; 
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
-
-        .feedback h2 {
-            text-align: center;
-            margin-bottom: 30px; 
-            font-size: 32px; 
-            font-weight: bold;
-            color: #007BFF;
-        }
-
-        .feedback-form .row {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 20px; 
-        }
-
-        .feedback-form input,
-        .feedback-form textarea {
-            flex: 1 1 100%;
-            padding: 16px 20px; 
-            font-size: 18px; 
-            border-radius: 12px;
-            border: 1px solid #ccc;
-            transition: 0.2s;
-        }
-        
-        .feedback-form textarea {
-            min-height: 150px; 
-        }
-
-
-        .feedback-form input:focus,
-        .feedback-form textarea:focus {
-            border-color: #007BFF;
-            outline: none;
-        }
-
-        .feedback-form button {
-            display: block;
-            width: 240px; 
-            margin: 10px auto 0;
-            padding: 16px 28px; 
-            font-size: 20px;
-            border-radius: 30px;
-            background: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
-
-        .feedback-form button:hover {
-            background: #0056b3;
-        }
-
-        /* DARK MODE FORM */
-        body.dark .feedback {
-            background: #2b2c30;
-            color: white;
-        }
-
-        body.dark .feedback-form input,
-        body.dark .feedback-form textarea {
-            background: #3a3b40;
-            border: 1px solid #555;
-            color: white;
-        }
-
-        body.dark .feedback-form input::placeholder,
-        body.dark .feedback-form textarea::placeholder {
-            color: #ccc;
-        }
-
-        body.dark .feedback-form button {
-            background: #111;
-        }
-
-        body.dark .feedback-form button:hover {
-            background: #333;
-        }
-
-        /* FOOTER */
-        footer {
-            margin-top: 50px;
-            background: #007BFF;
-            text-align: center;
-            padding: 25px; 
-            color: white;
-            font-size: 18px;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 850px) { 
-            .container {
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 20px;
+        /* RESPONSIVE - KHÔNG ĐỔI */
+        @media (max-width: 850px) { 
+            .container {
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 20px;
+            }
+            .member img {
+                max-width: 150px;
+                height: 150px;
+            }
+            .name {
+                font-size: 22px;
+            }
+            /* Ẩn bớt các vật thể trang trí trên di động */
+            #christmas-tree, #reindeer {
+                display: none;
             }
-            .member img {
-                max-width: 150px;
-                height: 150px;
-            }
-            .name {
-                font-size: 22px;
-            }
-        }
+        }
 
-        @media (max-width: 550px) { 
-            .container {
-                grid-template-columns: 1fr; 
-                max-width: 400px;
-            }
-            nav ul {
-                gap: 20px;
-            }
-            nav ul li a {
-                font-size: 16px;
-            }
-            .banner {
-                font-size: 32px;
-                height: 200px;
-            }
-            .feedback {
-                padding: 25px;
-            }
-            .profile-card { /* Điều chỉnh trên di động */
-                 max-width: 90%;
-                 padding: 20px;
-            }
-            .profile-card img {
-                width: 150px;
-                height: 150px;
-            }
-            .profile-card h2 {
-                font-size: 28px;
-            }
-            .profile-card p, .profile-card .quote-text {
-                font-size: 18px;
-            }
-        }
-    </style>
+        @media (max-width: 550px) { 
+            .container {
+                grid-template-columns: 1fr; 
+                max-width: 400px;
+            }
+            nav ul {
+                gap: 20px;
+            }
+            nav ul li a {
+                font-size: 16px;
+            }
+            .banner {
+                font-size: 32px;
+                height: 200px;
+            }
+            .feedback {
+                padding: 25px;
+            }
+            .profile-card { 
+                 max-width: 90%;
+                 padding: 20px;
+            }
+            .profile-card img {
+                width: 150px;
+                height: 150px;
+            }
+            .profile-card h2 {
+                font-size: 28px;
+            }
+            .profile-card p, .profile-card .quote-text {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="#members">Thông tin cá nhân</a></li>
-            <li><a href="#lessons">Bài học</a></li>
-            <li><a href="#feedback">Phản hồi</a></li> </ul>
-    </nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="#members">Thông tin cá nhân</a></li>
+            <li><a href="#lessons">Bài học</a></li>
+            <li><a href="#feedback">Phản hồi</a></li> </ul>
+    </nav>
 
-    <div class="banner">
-        BÁO CÁO TIN HỌC
-    </div>
+    <div class="banner">
+        BÁO CÁO TIN HỌC
+    </div>
 
-    <h1 id="members">Các thành viên của nhóm</h1>
+    <h1 id="members">Các thành viên của nhóm</h1>
 
-    <div class="container">
-        <div class="member" onclick="location.href='my.html'">
-            <img src="anh1.jpg" alt="Đặng Nguyễn Trúc My">
-            <div class="name">Đặng Nguyễn Trúc My</div>
-        </div>
+    <div class="container">
+        <div class="member" onclick="location.href='my.html'">
+            <img src="anh1.jpg" alt="Đặng Nguyễn Trúc My">
+            <div class="name">Đặng Nguyễn Trúc My</div>
+        </div>
 
-        <div class="member" onclick="location.href='thy.html'">
-            <img src="anh2.jpg" alt="Nguyễn Bảo Thy">
-            <div class="name">Nguyễn Bảo Thy</div>
-        </div>
+        <div class="member" onclick="location.href='thy.html'">
+            <img src="anh2.jpg" alt="Nguyễn Bảo Thy">
+            <div class="name">Nguyễn Bảo Thy</div>
+        </div>
 
-        <div class="member" onclick="location.href='truc.html'">
-            <img src="anh3.jpg" alt="Ngô Thanh Trúc">
-            <div class="name">Ngô Thanh Trúc</div>
-        </div>
+        <div class="member" onclick="location.href='truc.html'">
+            <img src="anh3.jpg" alt="Ngô Thanh Trúc">
+            <div class="name">Ngô Thanh Trúc</div>
+        </div>
 
-        <div class="member" onclick="location.href='duong.html'">
-            <img src="anh4.jpg" alt="Huỳnh Ánh Dương">
-            <div class="name">Huỳnh Ánh Dương</div>
-        </div>
+        <div class="member" onclick="location.href='duong.html'">
+            <img src="anh4.jpg" alt="Huỳnh Ánh Dương">
+            <div class="name">Huỳnh Ánh Dương</div>
+        </div>
 
-        <div class="member" onclick="location.href='han.html'">
-            <img src="anh5.jpg" alt="Nguyễn Huỳnh Bảo Hân">
-            <div class="name">Nguyễn Huỳnh Bảo Hân</div>
-        </div>
+        <div class="member" onclick="location.href='han.html'">
+            <img src="anh5.jpg" alt="Nguyễn Huỳnh Bảo Hân">
+            <div class="name">Nguyễn Huỳnh Bảo Hân</div>
+        </div>
 
-        <div class="member" onclick="location.href='van.html'">
-            <img src="anh6.jpg" alt="Tô Nguyễn Tường Vân">
-            <div class="name">Tô Nguyễn Tường Vân</div>
-        </div>
+        <div class="member" onclick="location.href='van.html'">
+            <img src="anh6.jpg" alt="Tô Nguyễn Tường Vân">
+            <div class="name">Tô Nguyễn Tường Vân</div>
+        </div>
 
-    </div>
+    </div>
 
-    <section class="lessons" id="lessons">
-        <h2>Danh sách Bài Học</h2>
+    <section class="lessons" id="lessons">
+        <h2>Danh sách Bài Học</h2>
 
-        <ul class="lesson-list">
-            <li><a href="https://www.canva.com/design/DAG1lItBaPM/x443j1maq3FFFfSX_jxMvw/edit?utm_source=sharebutton" target="_blank">Bài 1 + 2: Làm quen với trí tuệ nhân tạo</a></li>
-            <li><a href="#">Bài 3: Một số thiết bị mạng thông dụng</a></li>
-            <li><a href="https://www.canva.com/design/DAGzzzrEmJ4/CLsNfeL7fr05u5kddoBdMg/edit?utm_source=sharebutton" target="_blank">Bài 4: Giao thức mạng</a></li>
-            <li><a href="#">Bài 5: Thực hành chia sẻ tài nguyên</a></li>
-            <li><a href="https://www.canva.com/design/DAG2fE9kO9E/view?utm_source=sharebutton" target="_blank">Bài 6: Giao tiếp và ứng xử trong không gian mạng</a></li>
-            <li><a href="#">Bài 7: HTML và cấu trúc trang web</a></li>
-            <li><a href="bai8.html">Bài 8: Định dạng văn bản</a></li>
-            <li><a href="bai9.html">Bài 9: Tạo danh sách, bảng</a></li>
-            <li><a href="bai10.html">Bài 10: Tạo liên kết</a></li>
-            <li><a href="bai11.html">Bài 11: Chèn tệp đa phương tiện</a></li>
-            <li><a href="bai12.html">Bài 12: Tạo biểu mẫu</a></li>
-            <li><a href="bai13.html">Bài 13: Khái niệm, vai trò của CSS</a></li>
-            <li><a href="bai14.html">Bài 14: Định dạng văn bản bằng CSS</a></li>
-            <li><a href="bai15.html">Bài 15: Tạo màu cho chữ và nền</a></li>
-            <li><a href="bai16.html">Bài 16: Định dạng khung</a></li>
-            <li><a href="bai17.html">Bài 17: Các mức ưu tiên của bộ chọn</a></li>
-            <li><a href="bai18.html">Bài 18: Thực hành tổng hợp thiết kế trang web</a></li>
-        </ul>
-    </section>
+        <ul class="lesson-list">
+            <li><a href="https://www.canva.com/design/DAG1lItBaPM/x443j1maq3FFFfSX_jxMvw/edit?utm_source=sharebutton" target="_blank">Bài 1 + 2: Làm quen với trí tuệ nhân tạo</a></li>
+            <li><a href="#">Bài 3: Một số thiết bị mạng thông dụng</a></li>
+            <li><a href="https://www.canva.com/design/DAGzzzrEmJ4/CLsNfeL7fr05u5kddoBdMg/edit?utm_source=sharebutton" target="_blank">Bài 4: Giao thức mạng</a></li>
+            <li><a href="#">Bài 5: Thực hành chia sẻ tài nguyên</a></li>
+            <li><a href="https://www.canva.com/design/DAG2fE9kO9E/view?utm_source=sharebutton" target="_blank">Bài 6: Giao tiếp và ứng xử trong không gian mạng</a></li>
+            <li><a href="#">Bài 7: HTML và cấu trúc trang web</a></li>
+            <li><a href="bai8.html">Bài 8: Định dạng văn bản</a></li>
+            <li><a href="bai9.html">Bài 9: Tạo danh sách, bảng</a></li>
+            <li><a href="bai10.html">Bài 10: Tạo liên kết</a></li>
+            <li><a href="bai11.html">Bài 11: Chèn tệp đa phương tiện</a></li>
+            <li><a href="bai12.html">Bài 12: Tạo biểu mẫu</a></li>
+            <li><a href="bai13.html">Bài 13: Khái niệm, vai trò của CSS</a></li>
+            <li><a href="bai14.html">Bài 14: Định dạng văn bản bằng CSS</a></li>
+            <li><a href="bai15.html">Bài 15: Tạo màu cho chữ và nền</a></li>
+            <li><a href="bai16.html">Bài 16: Định dạng khung</a></li>
+            <li><a href="bai17.html">Bài 17: Các mức ưu tiên của bộ chọn</a></li>
+            <li><a href="bai18.html">Bài 18: Thực hành tổng hợp thiết kế trang web</a></li>
+        </ul>
+    </section>
 
-    <section class="feedback" id="feedback">
-        <h2>Gửi ý kiến phản hồi</h2>
-        <form class="feedback-form">
-            <div class="row">
-                <input type="text" name="name" placeholder="Họ tên" required>
-                <input type="email" name="email" placeholder="Email" required>
-            </div>
-            <div class="row">
-                <input type="tel" name="phone" placeholder="Số điện thoại">
-            </div>
-            <div class="row">
-                <textarea name="message" placeholder="Ý kiến phản hồi" rows="6" required></textarea>
-            </div>
-            <button type="submit">Gửi phản hồi</button>
-        </form>
-    </section>
+    <section class="feedback" id="feedback">
+        <h2>Gửi ý kiến phản hồi</h2>
+        <form class="feedback-form">
+            <div class="row">
+                <input type="text" name="name" placeholder="Họ tên" required>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="row">
+                <input type="tel" name="phone" placeholder="Số điện thoại">
+            </div>
+            <div class="row">
+                <textarea name="message" placeholder="Ý kiến phản hồi" rows="6" required></textarea>
+            </div>
+            <button type="submit">Gửi phản hồi</button>
+        </form>
+    </section>
 
-    <footer>
-        © 2025 - Nhóm 5 | Thiết kế bởi các thành viên nhóm 5 💙
-    </footer>
+    <footer>
+        © 2025 - Nhóm 5 | Thiết kế bởi các thành viên nhóm 5 💙
+    </footer>
 
-    <button id="toggleDark">Chế độ tối</button>
+    <div id="christmas-tree"></div> 
+    <div id="reindeer"></div>
+        <button id="toggleDark">Chế độ tối</button>
 
-    <script>
-        // Dark mode button
-        const btn = document.getElementById("toggleDark");
-        btn.addEventListener("click", () => {
-            document.body.classList.toggle("dark");
-            btn.textContent = document.body.classList.contains("dark")
-                ? "Chế độ sáng"
-                : "Chế độ tối";
-        });
+    <script>
+        // Dark mode button
+        const btn = document.getElementById("toggleDark");
+        btn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            btn.textContent = document.body.classList.contains("dark")
+                ? "Chế độ sáng"
+                : "Chế độ tối";
+        });
 
-        // Gửi form (hiện alert)
-        const feedbackForm = document.querySelector('.feedback-form');
-        feedbackForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Cảm ơn bạn đã gửi phản hồi! Chúng tôi sẽ xem xét ý kiến của bạn.'); // Cập nhật nội dung alert
-            feedbackForm.reset();
-        });
-    </script>
+        // Gửi form (hiện alert)
+        const feedbackForm = document.querySelector('.feedback-form');
+        feedbackForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã gửi phản hồi! Chúng tôi sẽ xem xét ý kiến của bạn.'); // Cập nhật nội dung alert
+            feedbackForm.reset();
+        });
+    </script>
 
 </body>
 </html>
