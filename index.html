@@ -359,19 +359,63 @@
                 font-size: 18px;
             }
         }
+        /* SIDEBAR */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100vh;
+    background: #388e3c;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.sidebar .logo {
+    color: #fff;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    font-family: 'Comfortaa', cursive;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background: #2e7d32;
+    border-radius: 10px;
+}
+
+/* Đẩy nội dung ra xa để không bị sidebar che */
+body {
+    margin-left: 230px;
+}
+
     </style>
 </head>
 
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="#members">Thông tin cá nhân</a></li>
-            <li><a href="#lessons">Bài học</a></li>
-            <li><a href="#feedback">Phản hồi</a></li> 
-        </ul>
-    </nav>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <h2 class="logo">NHÓM 5</h2>
+    <a href="index.html">Trang chủ</a>
+    <a href="#members">Thông tin cá nhân</a>
+    <a href="#lessons">Bài học</a>
+    <a href="#feedback">Phản hồi</a>
+</aside>
 
     <div class="banner">
         BÁO CÁO TIN HỌC
@@ -473,3 +517,7 @@
             e.preventDefault();
             alert('Cảm ơn bạn đã gửi phản hồi! Chúng tôi sẽ xem xét ý kiến của bạn.');
             feedbackForm.reset();
+                });
+    </script>
+</body>
+</html>
