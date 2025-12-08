@@ -406,14 +406,18 @@ body {
     font-size: 40px;
     font-weight: bold;
     text-align: center;
-    color: white;
+    margin-top: 40px;
+}
+
+.banner .title-text {
+    color: red;
     animation: glow 2s infinite;
 }
 
 @keyframes glow {
-    0% { text-shadow: 0 0 5px white; }
-    50% { text-shadow: 0 0 15px white; }
-    100% { text-shadow: 0 0 5px white; }
+    0% { text-shadow: 0 0 5px red; }
+    50% { text-shadow: 0 0 15px orange; }
+    100% { text-shadow: 0 0 5px red; }
 }
         
     </style>
@@ -431,7 +435,7 @@ body {
 </aside>
 
 <div class="banner">
-    ✨ 📚 BÁO CÁO TIN HỌC 📚 ✨
+    ✨📚 <span class="title-text">BÁO CÁO TIN HỌC</span> 📚✨
 </div>
 
     <h1 id="members">Các thành viên của nhóm</h1>
@@ -534,4 +538,5 @@ body {
     </script>
 </body>
 </html>
+
 
