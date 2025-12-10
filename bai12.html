@@ -4,56 +4,67 @@
     <meta charset="UTF-8">
     <title>Bài 12: Tạo biểu mẫu</title>
 
+    <!-- Font Comfortaa -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #EAF6FF;
+            font-family: "Comfortaa", sans-serif;
+            background: linear-gradient(135deg, #d7eaff, #bde0fe);
             margin: 0;
             padding: 40px;
         }
 
         .container {
-            max-width: 1100px; /* 👉 rộng ra */
+            max-width: 1100px;
             margin: auto;
             background: #fff;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.25);
         }
 
         h1 {
-            margin-top: 0;
             text-align: center;
-            font-size: 32px; /* 👉 chữ tiêu đề to hơn */
+            font-size: 38px;
+            margin-top: 0;
+            font-weight: 700;
+            color: #0056d6;
         }
 
         .content {
-            font-size: 20px;   /* 👉 chữ nội dung to hơn */
-            line-height: 1.85; /* 👉 dãn dòng */
+            font-size: 20px;
+            line-height: 1.9;
+        }
+
+        /* textarea giữ nội dung */
+        .raw-text {
+            width: 100%;
+            height: 680px;
+            padding: 18px;
+            font-family: "Comfortaa", monospace;
+            font-size: 18px;
+            white-space: pre-wrap;
+            overflow: auto;
+            box-sizing: border-box;
+            border: 2px solid #b8c1d1;
+            border-radius: 12px;
+            background: #f6f8fa;
+            outline: none;
         }
 
         a {
             display: inline-block;
-            margin-top: 35px;
+            margin-top: 30px;
             font-size: 22px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
             color: #007BFF;
+            transition: 0.2s;
         }
 
-        /* textarea đẹp hơn - dễ đọc */
-        .raw-text {
-            width: 100%;
-            height: 680px; /* 👉 cao hơn */
-            padding: 18px;
-            font-family: monospace;
-            font-size: 18px; /* 👉 chữ to hơn */
-            white-space: pre-wrap;
-            overflow: auto;
-            box-sizing: border-box;
-            border: 2px solid #bbb;
-            border-radius: 10px;
-            background: #fafafa;
+        a:hover {
+            transform: translateX(-4px);
         }
     </style>
 </head>
@@ -66,7 +77,7 @@
 
     <div class="content">
         <textarea class="raw-text" readonly>
-        <!-- ... giữ nguyên nội dung cũ của bạn ở đây ... -->
+<!-- ... giữ nguyên nội dung cũ của bạn ở đây ... -->
         </textarea>
     </div>
 
