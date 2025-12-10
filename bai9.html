@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <title>Bài 9: Tạo danh sách, bảng</title>
 
+    <!-- FONT COMFORTAA -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Comfortaa', sans-serif;
             background: #EAF6FF;
             margin: 0;
             padding: 50px;
@@ -14,28 +17,25 @@
 
         h1 {
             text-align: center;
-            font-size: 42px;
-            margin-bottom: 30px;
+            font-size: 45px;
+            margin-bottom: 35px;
         }
 
-        .content {
-            width: 100%;
+        .block {
+            background: #fff;
+            border: 3px solid #007BFF;
+            border-radius: 18px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
             font-size: 22px;
             line-height: 1.9;
         }
 
-        .raw-text {
-            width: 100%;
-            height: 600px;
-            font-size: 20px;
-            font-family: monospace;
-            padding: 20px;
-            border: 3px solid #007BFF;
-            border-radius: 12px;
-            background: #fff;
-            box-sizing: border-box;
-            white-space: pre-wrap;
-            overflow: auto;
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0056d6;
+            margin-bottom: 15px;
         }
 
         a {
@@ -53,10 +53,13 @@
 
     <h1>Bài 9: Tạo danh sách, bảng</h1>
 
-    <div class="content">
-        <!-- NGUYÊN VĂN, KHÔNG CHỈNH SỬA -->
-        <textarea class="raw-text" readonly>
-Luyện tập trang 56 Tin học 12: Sửa lại chương trình trong Hình 9.5a, sử dụng thuộc tính Style thay vì thuộc tính border để tạo viền cho bảng. Sử dụng màu xanh cho viền của ô hai dòng đầu bảng và sử dụng 3 màu đỏ, vàng, xanh cho ba chữ Toán, Vật lý và Hóa học.
+    <!-- ▶ Luyện tập -->
+    <div class="block">
+        <div class="title">Luyện tập trang 56 Tin học 12:</div>
+        <pre>
+Sửa lại chương trình trong Hình 9.5a, sử dụng thuộc tính Style thay vì thuộc tính border để tạo viền cho bảng. 
+Sử dụng màu xanh cho viền của ô hai dòng đầu bảng và sử dụng 3 màu đỏ, vàng, xanh cho ba chữ Toán, Vật lý và Hóa học.
+
 Lời giải:
 <table style="border-collapse: collapse;">
   <tr>
@@ -69,9 +72,15 @@ Lời giải:
     <td style="border: 2px solid green;">Hóa học</td>
   </tr>
 </table>
+        </pre>
+    </div>
 
+    <!-- ▶ Vận dụng -->
+    <div class="block">
+        <div class="title">Vận dụng trang 56 Tin học 12:</div>
+        <pre>
+Cho trước một bảng dữ liệu cỡ nx4, mỗi hàng tương ứng với một bộ (họ tên, điểm Toán, điểm Vật lý, điểm Hóa học) viết chương trình Python để tạo ra tệp HTML thực hiện việc vẽ bảng tương tự như Hình 9.5 và bổ sung dữ liệu vào các hàng phía dưới.
 
-Vận dụng trang 56 Tin học 12: Cho trước một bảng dữ liệu cỡ nx4, mỗi hàng tương ứng với một bộ (họ tên, điểm Toán, điểm Vật lý, điểm Hóa học) viết chương trình Python để tạo ra tệp HTML thực hiện việc vẽ bảng tương tự như Hình 9.5 và bổ sung dữ liệu vào các hàng phía dưới.
 Lời giải:
 def generate_html_table(data):
     html_content = "<table style=\"border-collapse: collapse;\">"
@@ -90,29 +99,36 @@ def generate_html_table(data):
         html_content += "</tr>"
     html_content += "</table>"
     return html_content
+
 # Dữ liệu ban đầu
 initial_data = [
     ["Họ tên", "Điểm Toán", "Điểm Vật lí", "Điểm Hóa học"],
     ["Nguyễn Văn A", "8.5", "7.0", "9.0"],
     ["Trần Thị B", "7.0", "8.0", "8.5"]
 ]
+
 # Dữ liệu mới cần bổ sung
 new_data = [
     ["Lê Quang C", "6.5", "7.5", "8.0"],
     ["Phạm Thị D", "9.0", "8.5", "7.5"]
 ]
+
 # Kết hợp dữ liệu cũ và mới
 combined_data = initial_data + new_data
+
 # Tạo nội dung HTML cho bảng dữ liệu
 html_content = generate_html_table(combined_data)
+
 # Lưu nội dung HTML vào tệp
 with open("data_table.html", "w") as file:
     file.write(html_content)
+
 print("Tạo tệp HTML thành công!")
-        </textarea>
+        </pre>
     </div>
 
     <a href="index.html">← Quay lại trang chính</a>
 
 </body>
+
 </html>
