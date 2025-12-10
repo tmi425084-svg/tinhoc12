@@ -7,29 +7,38 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #EAF6FF;
+            background: linear-gradient(135deg, #EAF6FF, #D7E8FF);
             margin: 0;
             padding: 40px;
         }
 
         .container {
-            max-width: 1100px; /* 👉 rộng hơn */
+            max-width: 1100px;
             margin: auto;
             background: #fff;
-            padding: 40px; /* 👉 thoáng */
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            padding: 45px;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
             margin-top: 0;
             text-align: center;
-            font-size: 32px; /* 👉 tiêu đề to */
+            font-size: 34px;
+            color: #004E8F;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
         .content {
-            font-size: 20px; /* 👉 chữ lớn */
-            line-height: 1.85;
+            font-size: 20px;
+            line-height: 1.9;
         }
 
         a {
@@ -38,22 +47,30 @@
             font-size: 22px;
             text-decoration: none;
             font-weight: bold;
-            color: #007BFF;
+            color: #fff;
+            background: #007BFF;
+            padding: 12px 26px;
+            border-radius: 8px;
+            transition: 0.25s;
         }
 
-        /* textarea phóng to dễ xem */
+        a:hover {
+            background: #0056c9;
+            transform: scale(1.04);
+        }
+
         .raw-text {
             width: 100%;
-            height: 680px; /* 👉 cao hơn */
-            padding: 18px;
-            font-family: monospace;
-            font-size: 18px;
+            height: 700px;
+            padding: 20px;
+            font-family: Consolas, monospace;
+            font-size: 19px;
             white-space: pre-wrap;
             overflow: auto;
-            box-sizing: border-box;
             border: 2px solid #bbb;
             border-radius: 10px;
-            background: #fafafa;
+            background: #fdfdfd;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -65,9 +82,8 @@
     <h1>Bài 18: Thực hiện tổng hợp thiết kế trang web</h1>
 
     <div class="content">
-        <!-- nội dung giữ nguyên -->
         <textarea class="raw-text" readonly>
-        Luyện tập 1 trang 105 Tin học 12: Tạo trang dang_ki.html chứa biểu mẫu đăng kí câu lạc bộ và bổ sung liên kết tới trang dang_ki trong phần cuối trang của tất cả các trang.
+Luyện tập 1 trang 105 Tin học 12: Tạo trang dang_ki.html chứa biểu mẫu đăng kí câu lạc bộ và bổ sung liên kết tới trang dang_ki trong phần cuối trang của tất cả các trang.
 Lời giải:
 Để tạo trang "dang_ki.html" chứa biểu mẫu đăng kí câu lạc bộ và bổ sung liên kết tới trang "dang_ki" trong phần cuối trang của tất cả các trang, em có thể làm như sau:
 - Tạo tệp tin HTML mới và đặt tên là "dang_ki.html".
