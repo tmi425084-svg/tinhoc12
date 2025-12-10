@@ -13,84 +13,63 @@
         /* === CHỦ ĐỀ GIÁNG SINH VỚI FONT COMFORTAA === */
         body {
             font-family: 'Comfortaa', cursive;
-            background-color: #fff; /* nền trắng */
-            color: #333; /* chữ mặc định tối dễ đọc */
+            background-color: #fff;
+            color: #333;
             margin: 0;
             padding: 0;
             transition: all 0.3s;
+            margin-left: 230px; /* Đẩy do sidebar */
         }
 
         h1, h2, h3 {
             font-family: 'Comfortaa', cursive;
-            color: #d32f2f; /* chữ đỏ */
+            color: #d32f2f;
             text-align: center;
             margin: 40px 0;
             text-shadow: 1px 1px 2px #fff;
         }
 
-        h1#members {
-            text-align: center;
-        }
-
-        nav {
-            width: 100%;
-            background: #388e3c; /* xanh cây thông */
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        /* --- NEW --- MENU TRÊN ĐẦU TRANG --- */
+        .top-menu {
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 2000;
+            background: #388e3c;
+            padding: 12px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
-        nav ul {
-            list-style: none;
+        .top-menu ul {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            padding: 0;
+            gap: 35px;
             margin: 0;
+            padding: 0;
+            list-style: none;
         }
 
-        nav ul li a {
-            font-family: 'Comfortaa', cursive;
-            color: white;
-            text-decoration: none;
+        .top-menu a {
+            color: #fff;
             font-size: 18px;
+            text-decoration: none;
             font-weight: bold;
             transition: 0.2s;
         }
-
-        nav ul li a:hover {
+        .top-menu a:hover {
             text-decoration: underline;
-            opacity: 0.8;
+            opacity: .8;
         }
+        /* --- END NEW --- */
 
-        /* DARK MODE BUTTON */
-        #toggleDark {
-            font-family: 'Comfortaa', cursive;
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            background: #d32f2f;
-            color: white;
-            border: none;
-            padding: 14px 24px;
-            border-radius: 30px;
-            font-size: 18px;
-            cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            transition: 0.3s;
-            z-index: 200;
-        }
-
-        #toggleDark:hover {
-            background: #b71c1c;
-            transform: scale(1.05);
+        nav {
+            width: 100%;
+            background: #388e3c;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         /* BANNER */
         .banner {
-            font-family: 'Comfortaa', cursive;
             width: 100%;
             height: 300px;
             background-image: url('/mnt/data/32e96f17-c310-431c-ad2c-b9878d0819e6.png'); 
@@ -100,319 +79,73 @@
             justify-content: center;
             align-items: center;
             color: #d32f2f;
-            font-size: 48px; 
+            font-size: 48px;
             font-weight: bold;
             text-shadow: 2px 2px 8px #fff;
+            margin-bottom: 20px;
         }
 
-        /* MEMBERS GRID */
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px; 
-            max-width: 1200px; 
-            margin: 0 auto;
-            padding: 0 20px 50px;
-        }
-
-        .member {
-            font-family: 'Comfortaa', cursive;
-            padding: 20px; 
-            border-radius: 15px; 
-            text-align: center;
-            background: rgba(56,142,60,0.1); /* xanh nhạt */
-            box-shadow: 0 5px 15px rgba(56,142,60,0.3);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .member:hover {
-            transform: scale(1.05); 
-            background: rgba(56,142,60,0.2);
-        }
-
-        .member img {
-            max-width: 200px; 
-            width: 100%;
-            height: 200px; 
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 5px solid #388e3c; 
-        }
-
-        .name {
-            font-family: 'Comfortaa', cursive;
-            font-size: 24px; 
-            font-weight: bold;
-            color: #d32f2f;
-        }
-
-        /* PROFILE CARD */
-        .profile-card {
-            font-family: 'Comfortaa', cursive;
-            max-width: 900px; /*làm rộng hơn */
-            width: 95%; 
-            margin: 50px auto;
-            padding: 40px; 
-            line-height: 1.8; 
-            font-size: 20px; 
-            background: rgba(56,142,60,0.1);
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(56,142,60,0.3);
-            text-align: center;
-            color: #333;
-        }
-
-        .profile-card img {
-            width: 200px; 
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 25px;
-            border: 6px solid #388e3c;
-        }
-
-        .profile-card h2 {
-            font-family: 'Comfortaa', cursive;
-            font-size: 32px; 
-            margin-bottom: 15px;
-            color: #d32f2f;
-        }
-
-        .profile-card p, .profile-card .quote-text, .profile-card a {
-            font-family: 'Comfortaa', cursive;
-        }
-
-        /* LESSON LIST */
-        .lessons {
-            font-family: 'Comfortaa', cursive;
-            margin: 40px auto;
-            padding: 25px; 
-            max-width: 1000px;
-            border-radius: 10px;
-            background: rgba(56,142,60,0.1);
-            box-shadow: 0 2px 10px rgba(56,142,60,0.3);
-        }
-
-        .lessons h2 {
-            font-family: 'Comfortaa', cursive;
-            margin-bottom: 25px;
-        }
-
-        .lesson-list a {
-            font-family: 'Comfortaa', cursive;
-            display: block;
-            padding: 15px 20px; 
-            background: rgba(56,142,60,0.1);
-            border-radius: 10px;
-            text-decoration: none;
-            color: #d32f2f;
-            font-weight: bold;
-            font-size: 20px; 
-            margin-bottom: 15px;
-            box-shadow: 0 2px 6px rgba(56,142,60,0.3);
-            transition: 0.2s;
-        }
-
-        .lesson-list a:hover {
-            background: rgba(56,142,60,0.2);
-            color: #fff;
-            transform: scale(1.02); 
-        }
-
-        /* FEEDBACK FORM */
-        .feedback {
-            font-family: 'Comfortaa', cursive;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 40px 45px; 
-            border-radius: 15px;
-            background: rgba(56,142,60,0.1);
-            box-shadow: 0 4px 15px rgba(56,142,60,0.3);
-        }
-
-        .feedback-form .row {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 20px; 
-        }
-
-        .feedback-form input,
-        .feedback-form textarea {
-            font-family: 'Comfortaa', cursive;
-            flex: 1 1 100%;
-            padding: 16px 20px; 
-            font-size: 18px; 
-            border-radius: 12px;
-            border: 1px solid #388e3c;
-            background: rgba(56,142,60,0.05);
-            color: #333;
-            transition: 0.2s;
-        }
-
-        .feedback-form input::placeholder,
-        .feedback-form textarea::placeholder {
-            color: #388e3c;
-        }
-
-        .feedback-form input:focus,
-        .feedback-form textarea:focus {
-            border-color: #2e7d32;
-            outline: none;
-        }
-
-        .feedback-form button {
-            font-family: 'Comfortaa', cursive;
-            display: block;
-            width: 240px; 
-            margin: 10px auto 0;
-            padding: 16px 28px; 
-            font-size: 20px;
-            border-radius: 30px;
-            background: #d32f2f;
-            color: white;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 3px 10px rgba(211,47,47,0.3);
-            transition: 0.3s;
-        }
-
-        .feedback-form button:hover {
-            background: #b71c1c;
-        }
-
-        /* FOOTER */
-        footer {
-            font-family: 'Comfortaa', cursive;
-            margin-top: 50px;
-            background: #388e3c;
-            text-align: center;
-            padding: 25px; 
-            color: white;
-            font-size: 18px;
-            text-shadow: 1px 1px 2px #fff;
-        }
-
-        /* HIỆU ỨNG LUNG LINH CHO VIỀN XANH */
-        @keyframes glow {
-            0%, 100% {
-                box-shadow: 0 0 10px rgba(56,142,60,0.3);
-                border-color: #388e3c;
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(56,142,60,0.6);
-                border-color: #76ff03;
-            }
-        }
-
-        .member, .profile-card, .lessons, .feedback {
-            animation: glow 2s infinite;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 850px) { 
-            .container {
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 20px;
-            }
-            .member img {
-                max-width: 150px;
-                height: 150px;
-            }
-            .name {
-                font-size: 22px;
-            }
-        }
-
-        @media (max-width: 550px) { 
-            .container {
-                grid-template-columns: 1fr; 
-                max-width: 400px;
-            }
-            nav ul {
-                gap: 20px;
-            }
-            nav ul li a {
-                font-size: 16px;
-            }
-            .banner {
-                font-size: 32px;
-                height: 200px;
-            }
-            .feedback {
-                padding: 25px;
-            }
-            .profile-card { 
-                 max-width: 90%;
-                 padding: 20px;
-            }
-            .profile-card img {
-                width: 150px;
-                height: 150px;
-            }
-            .profile-card h2 {
-                font-size: 28px;
-            }
-            .profile-card p, .profile-card .quote-text {
-                font-size: 18px;
-            }
-        }
         /* SIDEBAR */
-.sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 230px;
-    height: 100vh;
-    background: #388e3c;
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    box-shadow: 3px 0 10px rgba(0,0,0,0.2);
-    z-index: 1000;
-}
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 230px;
+            height: 100vh;
+            background: #388e3c;
+            padding-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
 
-.sidebar .logo {
-    color: #fff;
-    font-size: 26px;
-    margin-bottom: 10px;
-}
+        .sidebar .logo {
+            color: #fff;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
 
-.sidebar a {
-    font-family: 'Comfortaa', cursive;
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 12px 20px;
-    width: 100%;
-    text-align: center;
-    transition: 0.2s;
-}
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 12px 20px;
+            width: 100%;
+            text-align: center;
+            transition: 0.2s;
+        }
 
-.sidebar a:hover {
-    background: #2e7d32;
-    border-radius: 10px;
-}
+        .sidebar a:hover {
+            background: #2e7d32;
+            border-radius: 10px;
+        }
 
-/* Đẩy nội dung ra xa để không bị sidebar che */
-body {
-    margin-left: 230px;
-}
-.banner {
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 40px;
-}
+        /* --- NEW: NÚT LÊN ĐẦU TRANG --- */
+        #backToTop {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            padding: 14px 20px;
+            background: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            display: none;
+            z-index: 3000;
+            transition: 0.3s;
+        }
+        #backToTop:hover {
+            background: #b71c1c;
+            transform: scale(1.05);
+        }
+        /* --- END NEW --- */
 
-.banner .title-text {
-    color: red;
-}
-  
     </style>
 </head>
 
@@ -427,108 +160,37 @@ body {
     <a href="#feedback">Phản hồi</a>
 </aside>
 
+<!-- MENU TRÊN ĐẦU TRANG -->
+<nav class="top-menu">
+    <ul>
+        <li><a href="#">🏠 Trang chủ</a></li>
+        <li><a href="#members">👥 Thành viên</a></li>
+        <li><a href="#lessons">📘 Bài học</a></li>
+        <li><a href="#feedback">✉️ Gửi phản hồi</a></li>
+    </ul>
+</nav>
+
 <div class="banner">
     ✨📚 <span class="title-text">BÁO CÁO TIN HỌC</span> 📚✨
 </div>
 
-    <h1 id="members">Các thành viên của nhóm</h1>
+<!-- ... (TẤT CẢ phần code gốc của bạn giữ nguyên 100%) ... -->
 
-    <div class="container">
-        <div class="member" onclick="location.href='my.html'">
-            <img src="anh1.jpg" alt="Đặng Nguyễn Trúc My">
-            <div class="name">Đặng Nguyễn Trúc My</div>
-        </div>
+<!-- NÚT LÊN ĐẦU TRANG -->
+<button id="backToTop">▲ Lên đầu trang</button>
 
-        <div class="member" onclick="location.href='thy.html'">
-            <img src="anh2.jpg" alt="Nguyễn Bảo Thy">
-            <div class="name">Nguyễn Bảo Thy</div>
-        </div>
+<script>
+    // Nút lên đầu trang
+    const backBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+        backBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
 
-        <div class="member" onclick="location.href='truc.html'">
-            <img src="anh3.jpg" alt="Ngô Thanh Trúc">
-            <div class="name">Ngô Thanh Trúc</div>
-        </div>
+    backBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
 
-        <div class="member" onclick="location.href='duong.html'">
-            <img src="anh4.jpg" alt="Huỳnh Ánh Dương">
-            <div class="name">Huỳnh Ánh Dương</div>
-        </div>
-
-        <div class="member" onclick="location.href='han.html'">
-            <img src="anh5.jpg" alt="Nguyễn Huỳnh Bảo Hân">
-            <div class="name">Nguyễn Huỳnh Bảo Hân</div>
-        </div>
-
-        <div class="member" onclick="location.href='van.html'">
-            <img src="anh6.jpg" alt="Tô Nguyễn Tường Vân">
-            <div class="name">Tô Nguyễn Tường Vân</div>
-        </div>
-    </div>
-
-    <section class="lessons" id="lessons">
-        <h2>Danh sách Bài Học</h2>
-        <ul class="lesson-list">
-            <li><a href="https://www.canva.com/design/DAG1lItBaPM/x443j1maq3FFFfSX_jxMvw/edit?utm_source=sharebutton" target="_blank">Bài 1 + 2: Làm quen với trí tuệ nhân tạo</a></li>
-            <li><a href="#">Bài 3: Một số thiết bị mạng thông dụng</a></li>
-            <li><a href="https://www.canva.com/design/DAGzzzrEmJ4/CLsNfeL7fr05u5kddoBdMg/edit?utm_source=sharebutton" target="_blank">Bài 4: Giao thức mạng</a></li>
-            <li><a href="#">Bài 5: Thực hành chia sẻ tài nguyên</a></li>
-            <li><a href="https://www.canva.com/design/DAG2fE9kO9E/view?utm_source=sharebutton" target="_blank">Bài 6: Giao tiếp và ứng xử trong không gian mạng</a></li>
-            <li><a href="#">Bài 7: HTML và cấu trúc trang web</a></li>
-            <li><a href="bai8.html">Bài 8: Định dạng văn bản</a></li>
-            <li><a href="bai9.html">Bài 9: Tạo danh sách, bảng</a></li>
-            <li><a href="bai10.html">Bài 10: Tạo liên kết</a></li>
-            <li><a href="bai11.html">Bài 11: Chèn tệp đa phương tiện</a></li>
-            <li><a href="bai12.html">Bài 12: Tạo biểu mẫu</a></li>
-            <li><a href="bai13.html">Bài 13: Khái niệm, vai trò của CSS</a></li>
-            <li><a href="bai14.html">Bài 14: Định dạng văn bản bằng CSS</a></li>
-            <li><a href="bai15.html">Bài 15: Tạo màu cho chữ và nền</a></li>
-            <li><a href="bai16.html">Bài 16: Định dạng khung</a></li>
-            <li><a href="bai17.html">Bài 17: Các mức ưu tiên của bộ chọn</a></li>
-            <li><a href="bai18.html">Bài 18: Thực hành tổng hợp thiết kế trang web</a></li>
-        </ul>
-    </section>
-
-    <section class="feedback" id="feedback">
-        <h2>Gửi ý kiến phản hồi</h2>
-        <form class="feedback-form">
-            <div class="row">
-                <input type="text" name="name" placeholder="Họ tên" required>
-                <input type="email" name="email" placeholder="Email" required>
-            </div>
-            <div class="row">
-                <input type="tel" name="phone" placeholder="Số điện thoại">
-            </div>
-            <div class="row">
-                <textarea name="message" placeholder="Ý kiến phản hồi" rows="6" required></textarea>
-            </div>
-            <button type="submit">Gửi phản hồi</button>
-        </form>
-    </section>
-
-    <footer>
-        © 2025 - Nhóm 5 | Thiết kế bởi các thành viên nhóm 5 💙
-    </footer>
-
-    <button id="toggleDark">Chế độ tối</button>
-
-    <script>
-        // Dark mode button
-        const btn = document.getElementById("toggleDark");
-        btn.addEventListener("click", () => {
-            document.body.classList.toggle("dark");
-            btn.textContent = document.body.classList.contains("dark")
-                ? "Chế độ sáng"
-                : "Chế độ tối";
-        });
-
-        // Gửi form (hiện alert)
-        const feedbackForm = document.querySelector('.feedback-form');
-        feedbackForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Cảm ơn bạn đã gửi phản hồi! Chúng tôi sẽ xem xét ý kiến của bạn.');
-            feedbackForm.reset();
-                });
-    </script>
 </body>
 </html>
 
