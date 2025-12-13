@@ -4,65 +4,80 @@
     <meta charset="UTF-8">
     <title>Bài 11: Chèn tệp đa phương tiện và khung nội tuyến</title>
 
-    <!-- Font Comfortaa -->
+    <!-- FONT COMFORTAA -->
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             font-family: "Comfortaa", sans-serif;
-            background: linear-gradient(135deg, #d7eaff, #bde0fe);
+            background: linear-gradient(135deg, #EAF6FF, #D7E8FF);
             margin: 0;
             padding: 40px;
         }
+
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: auto;
             background: #ffffff;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+            padding: 50px;
+            border-radius: 18px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.25);
         }
+
         h1 {
             text-align: center;
-            font-size: 36px;
-            margin-top: 0;
-            color: #0056d6;
+            font-size: 38px;
+            color: #004E8F;
             font-weight: 700;
+            margin-bottom: 40px;
         }
-        h2 {
-            margin-top: 35px;
-            color: #00439c;
+
+        .section {
+            background: #F6FAFF;
+            border-left: 8px solid #4A8FE7;
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            border-radius: 14px;
+        }
+
+        .section-title {
+            font-size: 26px;
             font-weight: 700;
+            color: #003B73;
+            margin-bottom: 18px;
         }
-        .content {
+
+        .section-content {
             font-size: 20px;
-            line-height: 1.9;
+            line-height: 2;
         }
+
+        pre {
+            background: #ffffff;
+            border: 2px dashed #9bbcf3;
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 18px;
+            overflow-x: auto;
+            margin: 18px 0;
+        }
+
         a {
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 40px;
+            font-size: 22px;
             text-decoration: none;
             font-weight: 700;
-            color: #007BFF;
-            font-size: 20px;
-            transition: 0.2s;
-        }
-        a:hover {
-            transform: translateX(-4px);
-        }
-        pre, code {
-            font-size: 18px;
-            background: #f7f7f7;
-            padding: 14px;
+            color: #ffffff;
+            background: #007BFF;
+            padding: 14px 30px;
             border-radius: 10px;
-            overflow-x: auto;
-            display: block;
-            border: 1px solid #ccc;
+            transition: 0.25s;
         }
-        hr {
-            margin: 30px 0;
-            border: none;
-            border-top: 2px dashed #b0c7e6;
+
+        a:hover {
+            background: #0056c9;
+            transform: translateX(-4px);
         }
     </style>
 </head>
@@ -73,56 +88,54 @@
 
     <h1>Bài 11: Chèn tệp đa phương tiện và khung nội tuyến</h1>
 
-    <div class="content">
-
-        <h2>Luyện tập 1</h2>
-        <p><b>Câu hỏi:</b> Cho ảnh 720×450 px, chèn vào trang với:</p>
-
-        <pre>
+    <div class="section">
+        <div class="section-title">📘 Luyện tập 1</div>
+        <div class="section-content">
+            <b>Câu hỏi:</b> Cho ảnh 720×450 px, chèn vào trang với:
+            <pre>
 &lt;img src="images/1.png" alt="chiếc lá" width="600"&gt;
-        </pre>
+            </pre>
 
-        <p>
-        Khi width = 600 px, trình duyệt tự giữ tỉ lệ.
-        <br><b>Chiều cao:</b> 375 px.
-        <br><b>Kích thước kết quả:</b> 600 × 375 px.
-        </p>
+            Khi width = 600 px, trình duyệt tự giữ tỉ lệ.<br>
+            <b>Chiều cao:</b> 375 px.<br>
+            <b>Kích thước kết quả:</b> 600 × 375 px.
+        </div>
+    </div>
 
-        <hr>
-
-        <h2>Luyện tập 2</h2>
-        <p>Chèn thêm ảnh vào trang giới thiệu bản thân:</p>
-
-        <pre>
+    <div class="section">
+        <div class="section-title">📝 Luyện tập 2</div>
+        <div class="section-content">
+            Chèn thêm ảnh vào trang giới thiệu bản thân:
+            <pre>
 &lt;img src="images/anh1.jpg" alt="Ảnh của tôi"&gt;
 &lt;img src="images/anh2.jpg" alt="Ảnh của tôi"&gt;
 &lt;img src="images/anh3.jpg" alt="Ảnh của tôi"&gt;
-        </pre>
+            </pre>
 
-        <p>Ví dụ đầy đủ:</p>
-
-        <pre>
+            Ví dụ đầy đủ:
+            <pre>
 &lt;h2&gt;Ảnh của tôi&lt;/h2&gt;
 &lt;img src="path/image1.jpg"&gt;
 &lt;img src="path/image2.jpg"&gt;
 &lt;img src="path/image3.jpg"&gt;
-        </pre>
+            </pre>
+        </div>
+    </div>
 
-        <hr>
-
-        <h2>Vận dụng</h2>
-        <p>Tạo khung nội tuyến chứa video YouTube:</p>
-
-        <pre>
+    <div class="section">
+        <div class="section-title">🎯 Vận dụng</div>
+        <div class="section-content">
+            Tạo khung nội tuyến chứa video YouTube:
+            <pre>
 &lt;iframe width="560" height="315"
     src="https://www.youtube.com/embed/video_id"
     frameborder="0"
     allowfullscreen&gt;
 &lt;/iframe&gt;
-        </pre>
+            </pre>
 
-        <p>Thay <b>video_id</b> bằng mã của video thật.</p>
-
+            Thay <b>video_id</b> bằng mã của video thật.
+        </div>
     </div>
 
     <a href="index.html">← Quay lại trang chính</a>
@@ -131,4 +144,3 @@
 
 </body>
 </html>
-
