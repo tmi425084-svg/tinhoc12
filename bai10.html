@@ -4,70 +4,80 @@
     <meta charset="UTF-8">
     <title>Bài 10: Tạo liên kết</title>
 
+    <!-- FONT COMFORTAA -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #EAF6FF;
+            font-family: "Comfortaa", sans-serif;
+            background: linear-gradient(135deg, #EAF6FF, #D7E8FF);
             margin: 0;
             padding: 40px;
         }
+
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 18px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.25);
         }
+
         h1 {
-            margin-top: 0;
             text-align: center;
-            font-size: 36px;
-            margin-bottom: 10px;
+            font-size: 38px;
+            color: #004E8F;
+            font-weight: 700;
+            margin-bottom: 40px;
         }
 
-        .content {
-            font-size: 20px;
-            line-height: 1.9;
+        .section {
+            background: #F6FAFF;
+            border-left: 8px solid #4A8FE7;
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            border-radius: 14px;
         }
 
-        h2 {
-            margin-top: 30px;
+        .section-title {
             font-size: 26px;
-            color: #0056d6;
+            font-weight: 700;
+            color: #003B73;
+            margin-bottom: 18px;
         }
 
-        p {
+        .section-content {
             font-size: 20px;
-            margin-bottom: 12px;
+            line-height: 2;
         }
 
-        pre, code {
+        pre {
+            background: #ffffff;
+            border: 2px dashed #9bbcf3;
+            padding: 18px;
+            border-radius: 12px;
             font-size: 18px;
-            background: #f8f8f8;
-            padding: 14px;
-            border-radius: 8px;
             overflow-x: auto;
-            display: block;
-            border: 1px solid #ddd;
-            margin-bottom: 25px;
+            margin: 18px 0;
         }
 
         a.back-btn {
             display: inline-block;
             margin-top: 40px;
+            font-size: 22px;
             text-decoration: none;
-            font-weight: bold;
-            color: #fff;
+            font-weight: 700;
+            color: #ffffff;
             background: #007BFF;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 18px;
-            transition: 0.2s;
+            padding: 14px 30px;
+            border-radius: 10px;
+            transition: 0.25s;
         }
 
         a.back-btn:hover {
-            background: #0056d6;
+            background: #0056c9;
+            transform: translateX(-4px);
         }
     </style>
 </head>
@@ -78,42 +88,46 @@
 
     <h1>Bài 10: Tạo liên kết</h1>
 
-    <div class="content">
-
-        <h2>Luyện tập 1</h2>
-        <p><b>Yêu cầu:</b> Viết đoạn mã để tạo liên kết quay về trang chủ CLB.html trong trang thong_tin.html.</p>
-
-        <pre>
+    <div class="section">
+        <div class="section-title">📘 Luyện tập 1</div>
+        <div class="section-content">
+            <b>Yêu cầu:</b> Viết đoạn mã để tạo liên kết quay về trang chủ <b>CLB.html</b> trong trang <b>thong_tin.html</b>.
+            <pre>
 &lt;a href="CLB.html"&gt;Quay về trang chủ&lt;/a&gt;
-        </pre>
+            </pre>
+        </div>
+    </div>
 
-        <h2>Luyện tập 2</h2>
-        <p>Viết trang web giới thiệu bản thân, có 3 liên kết Facebook:</p>
-
-        <pre>
+    <div class="section">
+        <div class="section-title">📝 Luyện tập 2</div>
+        <div class="section-content">
+            Viết trang web giới thiệu bản thân, có 3 liên kết Facebook:
+            <pre>
 &lt;ul&gt;
     &lt;li&gt;&lt;a href="https://facebook.com/friend1" target="_blank"&gt;Facebook Bạn 1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="https://facebook.com/friend2" target="_blank"&gt;Facebook Bạn 2&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="https://facebook.com/friend3" target="_blank"&gt;Facebook Bạn 3&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-        </pre>
+            </pre>
+        </div>
+    </div>
 
-        <h2>Vận dụng</h2>
-        <p>Đặt liên kết từ tên CLB đến đoạn giới thiệu tương ứng trong trang.</p>
-
-        <pre>
+    <div class="section">
+        <div class="section-title">🎯 Vận dụng</div>
+        <div class="section-content">
+            Đặt liên kết từ tên CLB đến đoạn giới thiệu tương ứng trong trang:
+            <pre>
 &lt;td&gt;&lt;a href="#club1"&gt;Câu lạc bộ A&lt;/a&gt;&lt;/td&gt;
-        </pre>
+            </pre>
 
-        <p>Phần dưới đặt các đoạn thông tin:</p>
-
-        <pre>
+            Phần dưới đặt các đoạn thông tin:
+            <pre>
 &lt;h2 id="club1"&gt;Câu lạc bộ A&lt;/h2&gt;
 &lt;p&gt;Địa điểm: ...&lt;/p&gt;
 &lt;p&gt;Thành viên: ...&lt;/p&gt;
 &lt;p&gt;...&lt;/p&gt;
-        </pre>
-
+            </pre>
+        </div>
     </div>
 
     <a href="index.html" class="back-btn">← Quay lại trang chính</a>
