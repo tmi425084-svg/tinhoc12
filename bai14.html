@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 14: Định dạng văn bản bằng CSS</title>
+
+    <!-- FONT COMFORTAA -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Comfortaa", sans-serif;
+            background: linear-gradient(135deg, #d7eaff, #bde0fe);
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 38px;
+            margin-top: 0;
+            color: #0056d6;
+            font-weight: 700;
+        }
+
+        h2 {
+            margin-top: 35px;
+            color: #00439c;
+            font-weight: 700;
+        }
+
+        .content {
+            font-size: 20px;
+            line-height: 1.9;
+        }
+
+        pre {
+            font-size: 18px;
+            background: #f7f7f7;
+            padding: 18px;
+            border-radius: 10px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+        }
+
+        hr {
+            margin: 35px 0;
+            border: none;
+            border-top: 2px dashed #b0c7e6;
+        }
+
+        /* ===== FONT DEMO ===== */
+        .font-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .font-box {
+            background: #f8fbff;
+            border: 2px solid #007BFF;
+            border-radius: 12px;
+            padding: 18px;
+            font-size: 20px;
+        }
+
+        .times { font-family: "Times New Roman", serif; }
+        .courier { font-family: "Courier New", monospace; }
+        .abadi { font-family: "Abadi MT Condensed Light", sans-serif; }
+        .bradley { font-family: "Bradley Hand ITC", cursive; }
+        .berlin { font-family: "Berlin Sans FB", sans-serif; }
+        .algerian { font-family: "Algerian", serif; }
+        .consolas { font-family: "Consolas", monospace; }
+        .cascadia { font-family: "Cascadia Code", monospace; }
+
+        a {
+            display: inline-block;
+            margin-top: 40px;
+            font-size: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            color: #007BFF;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Bài 14: Định dạng văn bản bằng CSS</h1>
+
+    <div class="content">
+
+        <!-- LUYỆN TẬP 1 -->
+        <h2>Luyện tập 1</h2>
+
+        <pre>
+a) Times New Roman
+b) Courier
+c) Abadi
+d) Bradley Hand ITC
+e) Berlin Sans FB
+f) ALGERIAN
+g) Consolas
+h) Cascadia
+        </pre>
+
+        <p><b>Kết quả hiển thị các kiểu chữ:</b></p>
+
+        <div class="font-grid">
+            <div class="font-box times">Times New Roman</div>
+            <div class="font-box courier">Courier</div>
+            <div class="font-box abadi">Abadi</div>
+            <div class="font-box bradley">Bradley Hand ITC</div>
+            <div class="font-box berlin">Berlin Sans FB</div>
+            <div class="font-box algerian">ALGERIAN</div>
+            <div class="font-box consolas">Consolas</div>
+            <div class="font-box cascadia">Cascadia</div>
+        </div>
+
+        <hr>
+
+        <!-- LUYỆN TẬP 2 -->
+        <h2>Luyện tập 2</h2>
+        <pre>
+Các thuộc tính CSS liên quan đến định dạng đoạn văn bản:
+- Căn đoạn văn bản
+- Màu chữ
+- Kiểu chữ
+        </pre>
+
+        <hr>
+
+        <!-- VẬN DỤNG 1 -->
+        <h2>Vận dụng 1</h2>
+        <pre>
+font-variant:
+- normal: Chữ in thường (mặc định)
+- small-caps: Chữ viết hoa nhỏ
+
+letter-spacing:
+- Xác định khoảng cách giữa các kí tự
+- Ví dụ: letter-spacing: 2px;
+
+word-spacing:
+- Xác định khoảng cách giữa các từ
+- Ví dụ: word-spacing: 5px;
+
+text-shadow:
+- Tạo hiệu ứng bóng cho văn bản
+- Ví dụ: text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        </pre>
+
+    </div>
+
+    <a href="index.html">← Quay lại trang chính</a>
+
+</div>
+
+</body>
+</html>
