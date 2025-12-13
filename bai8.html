@@ -5,138 +5,179 @@
     <title>Bài 8: Định dạng văn bản</title>
 
     <!-- FONT COMFORTAA -->
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             font-family: "Comfortaa", sans-serif;
-            background: #EAF6FF;
+            background: linear-gradient(135deg, #EAF6FF, #D7E8FF);
             margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: #ffffff;
             padding: 50px;
+            border-radius: 18px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.25);
         }
 
         h1 {
             text-align: center;
-            font-size: 46px;
+            font-size: 38px;
+            color: #004E8F;
+            font-weight: 700;
             margin-bottom: 40px;
         }
 
-        .content {
-            width: 100%;
-            font-size: 24px;
+        .section {
+            background: #F6FAFF;
+            border-left: 8px solid #4A8FE7;
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            border-radius: 14px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #003B73;
+            margin-bottom: 18px;
+        }
+
+        .section-content {
+            font-size: 20px;
             line-height: 2;
         }
 
-        /* Ô nổi bật cho tiêu đề từng bài */
-        .block-title {
-            background: #fff;
-            padding: 18px 25px;
-            margin: 35px 0 20px;
-            border-left: 8px solid #007BFF;
-            border-radius: 10px;
-            font-size: 28px;
-            font-weight: 700;
+        pre {
+            background: #ffffff;
+            border: 2px dashed #9bbcf3;
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 18px;
+            overflow-x: auto;
+            margin-top: 18px;
         }
 
-        /* NỘI DUNG BÊN TRONG */
-        .block-text {
-            padding: 10px 10px 0px 10px;
-            font-size: 22px;
-        }
-
-        a {
+        a.back-btn {
             display: inline-block;
-            font-size: 24px;
-            margin-top: 50px;
+            margin-top: 40px;
+            font-size: 22px;
             text-decoration: none;
-            font-weight: bold;
-            color: #007BFF;
+            font-weight: 700;
+            color: #ffffff;
+            background: #007BFF;
+            padding: 14px 30px;
+            border-radius: 10px;
+            transition: 0.25s;
+        }
+
+        a.back-btn:hover {
+            background: #0056c9;
+            transform: translateX(-4px);
         }
     </style>
 </head>
 
 <body>
 
+<div class="container">
+
     <h1>Bài 8: Định dạng văn bản</h1>
 
-    <div class="content">
-
-        <!-- Luyện tập 1 -->
-        <div class="block-title">Luyện tập 1 trang 51 Tin học 12</div>
-        <div class="block-text">
+    <div class="section">
+        <div class="section-title">📘 Luyện tập 1 trang 51 – Tin học 12</div>
+        <div class="section-content">
             Hãy sửa lại phần tử sau để làm nổi bật ý chính của câu:
-            <br><br>
-            &lt;p&gt; thẻ strong vào thẻ em được sử dụng để nhấn mạnh vào nội dung trong phần tử.
-            Thẻ B chỉ có tác dụng in đậm văn bản &lt;p&gt;
-            <br><br>
-            <b>Lời giải:</b><br>
-            &lt;p&gt;<strong>Thẻ strong</strong> vào <em>thẻ em</em> được sử dụng để nhấn mạnh vào nội dung trong phần tử.
-            Thẻ <strong>B</strong> chỉ có tác dụng in đậm văn bản.&lt;/p&gt;
+
+            <pre>
+&lt;p&gt; thẻ strong vào thẻ em được sử dụng để nhấn mạnh vào nội dung trong phần tử.
+Thẻ B chỉ có tác dụng in đậm văn bản &lt;/p&gt;
+            </pre>
+
+            <b>Lời giải:</b>
+
+            <pre>
+&lt;p&gt;&lt;strong&gt;Thẻ strong&lt;/strong&gt; vào &lt;em&gt;thẻ em&lt;/em&gt; được sử dụng để nhấn mạnh vào nội dung trong phần tử.
+Thẻ &lt;strong&gt;B&lt;/strong&gt; chỉ có tác dụng in đậm văn bản.&lt;/p&gt;
+            </pre>
         </div>
-
-
-        <!-- Luyện tập 2 -->
-        <div class="block-title">Luyện tập 2 trang 51 Tin học 12</div>
-        <div class="block-text">
-            Trình bày đoạn văn bản sau bằng mã HTML:
-            <br><br>
-            INTERNET TỐC ĐỘ CAO<br>
-            Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.<br>
-            Các tính năng nổi bật:<br>
-            Tốc độ siêu cao từ 150 MBps trở lên<br>
-            Lắp đặt nhanh chóng trong 24h<br>
-            Phù hợp với cá nhân/Hộ gia đình<br>
-            Tặng modem 2 băng tần<br>
-            Miễn phí lắp đặt hỗ trợ 24/7.<br><br>
-
-            <b>Lời giải:</b><br><br>
-
-            &lt;!DOCTYPE html&gt;<br>
-            &lt;html lang="en"&gt;<br>
-            &lt;head&gt;<br>
-            &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
-            &nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
-            &nbsp;&nbsp;&lt;title&gt;INTERNET TỐC ĐỘ CAO&lt;/title&gt;<br>
-            &lt;/head&gt;<br>
-            &lt;body&gt;<br>
-            &nbsp;&nbsp;&lt;h1&gt;INTERNET TỐC ĐỘ CAO&lt;/h1&gt;<br>
-            &nbsp;&nbsp;&lt;p&gt;&lt;em&gt;Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.&lt;/em&gt;&lt;/p&gt;<br>
-            &nbsp;&nbsp;&lt;h2&gt;&lt;strong&gt;Các tính năng nổi bật:&lt;/strong&gt;&lt;/h2&gt;<br>
-            &nbsp;&nbsp;&lt;ul&gt;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Tốc độ siêu cao từ 150 MBps trở lên&lt;/li&gt;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Lắp đặt nhanh chóng trong 24h&lt;/li&gt;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Phù hợp với cá nhân/Hộ gia đình&lt;/li&gt;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Tặng modem 2 băng tần&lt;/li&gt;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Miễn phí lắp đặt hỗ trợ 24/7&lt;/li&gt;<br>
-            &nbsp;&nbsp;&lt;/ul&gt;<br>
-            &lt;/body&gt;<br>
-            &lt;/html&gt;
-        </div>
-
-
-        <!-- Vận dụng 1 -->
-        <div class="block-title">Vận dụng 1 trang 51 Tin học 12</div>
-        <div class="block-text">
-            Hãy chỉ ra các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề một bài thơ.
-            <br><br>
-            <b>Lời giải:</b><br>
-            Chọn màu cụ thể, chọn ảnh nền, tạo tiêu đề bằng thẻ &lt;h1&gt;, &lt;h2&gt;, hoặc &lt;h3&gt;, sau đó thêm ảnh nền và thuộc tính color.
-        </div>
-
-
-        <!-- Vận dụng 2 -->
-        <div class="block-title">Vận dụng 2 trang 51 Tin học 12</div>
-        <div class="block-text">
-            Hãy đưa ra các định dạng một đoạn văn bản để được kết quả như sau:
-            <br><br>
-            Định dạng chữ đậm<br>
-            - Định dạng chữ thường.<br>
-            - Định dạng chữ cỡ chữ.
-        </div>
-
     </div>
 
-    <a href="index.html">← Quay lại trang chính</a>
+    <div class="section">
+        <div class="section-title">📘 Luyện tập 2 trang 51 – Tin học 12</div>
+        <div class="section-content">
+            Trình bày đoạn văn bản sau bằng mã HTML:
+
+            <pre>
+INTERNET TỐC ĐỘ CAO
+Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.
+Các tính năng nổi bật:
+Tốc độ siêu cao từ 150 MBps trở lên
+Lắp đặt nhanh chóng trong 24h
+Phù hợp với cá nhân/Hộ gia đình
+Tặng modem 2 băng tần
+Miễn phí lắp đặt hỗ trợ 24/7.
+            </pre>
+
+            <b>Lời giải:</b>
+
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;INTERNET TỐC ĐỘ CAO&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;INTERNET TỐC ĐỘ CAO&lt;/h1&gt;
+    &lt;p&gt;&lt;em&gt;Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.&lt;/em&gt;&lt;/p&gt;
+    &lt;h2&gt;&lt;strong&gt;Các tính năng nổi bật:&lt;/strong&gt;&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Tốc độ siêu cao từ 150 MBps trở lên&lt;/li&gt;
+        &lt;li&gt;Lắp đặt nhanh chóng trong 24h&lt;/li&gt;
+        &lt;li&gt;Phù hợp với cá nhân/Hộ gia đình&lt;/li&gt;
+        &lt;li&gt;Tặng modem 2 băng tần&lt;/li&gt;
+        &lt;li&gt;Miễn phí lắp đặt hỗ trợ 24/7&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">🎯 Vận dụng 1 trang 51 – Tin học 12</div>
+        <div class="section-content">
+            Hãy chỉ ra các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề một bài thơ.
+
+            <pre>
+Chọn màu cụ thể, chọn ảnh nền, tạo tiêu đề bằng thẻ &lt;h1&gt;, &lt;h2&gt; hoặc &lt;h3&gt;,
+sau đó thêm ảnh nền và thuộc tính color.
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">🎯 Vận dụng 2 trang 51 – Tin học 12</div>
+        <div class="section-content">
+            Hãy đưa ra các định dạng một đoạn văn bản để được kết quả như sau:
+
+            <pre>
+Định dạng chữ đậm
+- Định dạng chữ thường
+- Định dạng cỡ chữ
+            </pre>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">← Quay lại trang chính</a>
+
+</div>
 
 </body>
 </html>
