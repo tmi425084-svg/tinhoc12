@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Bài 16: Định dạng khung</title>
 
-    <!-- Font Comfortaa -->
+    <!-- FONT COMFORTAA -->
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             font-family: "Comfortaa", sans-serif;
-            background: linear-gradient(135deg, #d7eaff, #bde0fe);
+            background: linear-gradient(135deg, #EAF6FF, #D7E8FF);
             margin: 0;
             padding: 40px;
         }
@@ -18,51 +18,56 @@
         .container {
             max-width: 1100px;
             margin: auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 18px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.25);
         }
 
         h1 {
-            margin-top: 0;
             text-align: center;
-            font-size: 38px;
+            font-size: 40px;
+            color: #004E8F;
             font-weight: 700;
-            color: #0056d6;
+            margin-bottom: 40px;
         }
 
-        .content {
+        .section {
+            background: #F6FAFF;
+            border-left: 8px solid #4A8FE7;
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            border-radius: 14px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #003B73;
+            margin-bottom: 16px;
+        }
+
+        .section-content {
             font-size: 20px;
-            line-height: 1.9;
-        }
-
-        .raw-text {
-            width: 100%;
-            height: 680px;
-            padding: 18px;
-            font-family: "Comfortaa", monospace;
-            font-size: 18px;
+            line-height: 2;
             white-space: pre-wrap;
-            overflow: auto;
-            box-sizing: border-box;
-            border: 2px solid #b8c1d1;
-            border-radius: 12px;
-            background: #f6f8fa;
-            outline: none;
         }
 
         a {
             display: inline-block;
-            margin-top: 35px;
+            margin-top: 40px;
             font-size: 22px;
             text-decoration: none;
             font-weight: 700;
-            color: #007BFF;
-            transition: 0.2s;
+            color: #ffffff;
+            background: #007BFF;
+            padding: 14px 30px;
+            border-radius: 10px;
+            transition: 0.25s;
         }
 
         a:hover {
+            background: #0056c9;
             transform: translateX(-4px);
         }
     </style>
@@ -74,20 +79,24 @@
 
     <h1>Bài 16: Định dạng khung</h1>
 
-    <div class="content">
-        <textarea class="raw-text" readonly>
-
+    <div class="section">
+        <div class="section-title">📘 Câu 1</div>
+        <div class="section-content">
 Câu 1: Phần tử html có thể ẩn đi trên trang web được không? Nếu có thì dùng lệnh CSS gì?
 
 Có, phần tử HTML có thể được ẩn đi trên trang web bằng cách sử dụng lệnh CSS display: none;.
+        </div>
+    </div>
 
-
+    <div class="section">
+        <div class="section-title">📝 Câu 2</div>
+        <div class="section-content">
 Câu 2: Hãy giải thích ý nghĩa định dạng sau:
 
 Ý nghĩa:
 - test.test_more: Đây là một bộ chọn đồng thời (class selector) áp dụng cho các phần tử có cả hai lớp tên là "test" và "test_more". Điều này có nghĩa là chỉ các phần tử có cả hai lớp tên này sẽ được áp dụng định dạng.
 - background-color: red;: Đây là thuộc tính CSS được sử dụng để đặt màu nền (background-color) của các phần tử được chọn. Trong trường hợp này, màu nền của các phần tử có lớp tên "test" và "test_more" sẽ được đặt là đỏ (red).
-        </textarea>
+        </div>
     </div>
 
     <a href="index.html">← Quay lại trang chính</a>
