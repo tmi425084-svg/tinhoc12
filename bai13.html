@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -18,38 +19,40 @@
         .container {
             max-width: 1100px;
             margin: auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+            background: #ffffff;
+            padding: 45px;
+            border-radius: 18px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.25);
         }
 
         h1 {
             text-align: center;
-            font-size: 38px;
+            font-size: 40px;
             margin-top: 0;
+            margin-bottom: 35px;
             font-weight: 700;
             color: #0056d6;
         }
 
-        .content {
-            font-size: 20px;
-            line-height: 1.9;
+        .section {
+            background: #f6f9ff;
+            border-left: 8px solid #0056d6;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            border-radius: 14px;
         }
 
-        .raw-text {
-            width: 100%;
-            height: 680px;
-            padding: 18px;
-            font-family: "Comfortaa", monospace;
-            font-size: 18px;
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #003c9d;
+            margin-bottom: 15px;
+        }
+
+        .section-content {
+            font-size: 20px;
+            line-height: 1.9;
             white-space: pre-wrap;
-            overflow: auto;
-            box-sizing: border-box;
-            border: 2px solid #b8c1d1;
-            border-radius: 12px;
-            background: #f6f8fa;
-            outline: none;
         }
 
         a {
@@ -74,22 +77,29 @@
 
     <h1>Bài 13: Khái niệm, vai trò của CSS</h1>
 
-    <div class="content">
-        <textarea class="raw-text" readonly>
+    <div class="section">
+        <div class="section-title">📘 Luyện tập 1</div>
+        <div class="section-content">
 Luyện tập 1 trang 75 Tin học 12: Khẳng định “Ngôn ngữ định dạng CSS chính là ngôn ngữ HTML” là đúng hay sai?
 Lời giải:
 Sai. Ngôn ngữ định dạng CSS (Cascading Style Sheets) không phải là ngôn ngữ HTML (HyperText Markup Language).
 HTML được sử dụng để tạo cấu trúc và định dạng nội dung trên trang web bằng cách sử dụng các thẻ và các thuộc tính được nhúng trong các thẻ này.
 Trong khi đó, CSS được sử dụng để điều chỉnh cách mà các phần tử HTML được hiển thị trên trình duyệt, bao gồm màu sắc, font chữ, khoảng cách, đường viền và các thuộc tính khác. CSS là một ngôn ngữ độc lập dùng để cung cấp phong cách và thiết kế cho các trang web, và nó hoạt động cùng với HTML để tạo ra trải nghiệm người dùng hoàn chỉnh.
+        </div>
+    </div>
 
-
+    <div class="section">
+        <div class="section-title">📘 Luyện tập 2</div>
+        <div class="section-content">
 Luyện tập 2 trang 75 Tin học 12: Khẳng định “Có thể chỉ cần thay đổi thông tin của tệp CSS sẽ làm thay đổi định dạng của nhiều trang web thậm chí của cả một trang website” là đúng hay sai?
 Lời giải:
 Đúng. Việc chỉ cần thay đổi thông tin trong tệp CSS có thể làm thay đổi định dạng của nhiều trang web hoặc thậm chí của cả một trang web. Điều này là do CSS được sử dụng để kiểm soát phong cách và định dạng của các phần tử HTML trên trang web. Thay đổi các thuộc tính trong tệp CSS, chẳng hạn như màu sắc, kích thước, font chữ, độ dày của đường viền, và khoảng cách, có thể ảnh hưởng đến cách mà các phần tử HTML được hiển thị trên trang web. Do đó, việc chỉnh sửa CSS có thể ảnh hưởng lớn đến giao diện của nhiều trang web hoặc thậm chí của cả một trang web.
+        </div>
+    </div>
 
-
-
-
+    <div class="section">
+        <div class="section-title">📝 Vận dụng 1</div>
+        <div class="section-content">
 Vận dụng 1 trang 75 Tin học 12: Trong các phần mềm soạn thảo văn bản thường có chức năng tạo các mẫu định dạng Style Sheet dùng để tạo khuôn cho các đoạn (paragraph) của văn bản. Em hãy trình bày sự giống nhau và tương thích của Style Sheet trong các phần mềm soạn thảo văn bản với CSS của trang web. 
 Lời giải:
 Sự giống nhau và tương thích của Style Sheet  trong các phần mềm soạn thảo văn bản với CSS của trang web:
@@ -97,8 +107,12 @@ Sự giống nhau và tương thích của Style Sheet  trong các phần mềm 
 - Tính tái sử dụng: Cả hai đều hỗ trợ tính tái sử dụng. Trong CSS, bạn có thể đặt các quy tắc định dạng trong một tệp riêng và áp dụng chúng cho nhiều trang web hoặc nhiều phần tử HTML khác nhau. Tương tự, trong các phần mềm soạn thảo văn bản, bạn có thể tạo các mẫu định dạng và áp dụng chúng cho nhiều phần văn bản khác nhau.
 - Khuôn mẫu định dạng: Cả Style Sheet và CSS đều cho phép bạn tạo ra các khuôn mẫu định dạng để áp dụng cho các phần tử văn bản. Bằng cách này, bạn có thể định dạng các tiêu đề, đoạn văn, danh sách, v.v., một cách thống nhất và dễ dàng.
 - Kiểm soát phong cách và định dạng: Cả Style Sheet và CSS đều cho phép bạn kiểm soát phong cách và định dạng của các phần tử văn bản. Bạn có thể điều chỉnh màu sắc, kích thước chữ, font chữ, độ dày của đường viền, khoảng cách, v.v., để tạo ra giao diện văn bản phù hợp với ý định của mình.
+        </div>
+    </div>
 
-
+    <div class="section">
+        <div class="section-title">📝 Vận dụng 2</div>
+        <div class="section-content">
 Vận dụng 2 trang 75 Tin học 12: Thiết lập trang web với nội dung sau và định dạng trang bằng các mẫu CSS
 Lịch sử CSS
 Ý tưởng của CSS do kỹ sư Hakon Wium Line, người Na Uy thiết lập năm 1994 trong khi làm việc với Tim Berners-Lê tại viện hạt nhân CERN.
@@ -168,7 +182,7 @@ a:hover {
 p {
     margin: 10px 0;
 }
-        </textarea>
+        </div>
     </div>
 
     <a href="index.html">← Quay lại trang chính</a>
@@ -177,4 +191,3 @@ p {
 
 </body>
 </html>
-
