@@ -9,7 +9,7 @@
 
     <style>
         body {
-            font-family: 'Comfortaa', sans-serif;
+            font-family: "Comfortaa", sans-serif;
             background: linear-gradient(135deg, #EAF6FF, #D7E8FF);
             margin: 0;
             padding: 40px;
@@ -18,47 +18,57 @@
         .container {
             max-width: 1100px;
             margin: auto;
-            background: #fff;
+            background: #ffffff;
             padding: 50px;
-            border-radius: 14px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            border-radius: 18px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.25);
         }
 
         h1 {
             text-align: center;
-            font-size: 34px;
+            font-size: 40px;
             color: #004E8F;
             font-weight: 700;
-            margin-bottom: 25px;
+            margin-bottom: 40px;
         }
 
-        pre {
+        .section {
+            background: #F6FAFF;
+            border-left: 8px solid #4A8FE7;
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            border-radius: 14px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #003B73;
+            margin-bottom: 16px;
+        }
+
+        .section-content {
             font-size: 20px;
             line-height: 2;
             white-space: pre-wrap;
-            overflow-wrap: break-word;
-            background: #F8FBFF;
-            border-left: 6px solid #4A8FE7;
-            padding: 28px;
-            border-radius: 12px;
         }
 
         a {
             display: inline-block;
-            margin-top: 35px;
+            margin-top: 40px;
             font-size: 22px;
             text-decoration: none;
-            font-weight: 600;
-            color: #fff;
+            font-weight: 700;
+            color: #ffffff;
             background: #007BFF;
-            padding: 12px 26px;
-            border-radius: 8px;
+            padding: 14px 30px;
+            border-radius: 10px;
             transition: 0.25s;
         }
 
         a:hover {
             background: #0056c9;
-            transform: scale(1.04);
+            transform: translateX(-4px);
         }
     </style>
 </head>
@@ -69,7 +79,9 @@
 
     <h1>Bài 18: Thực hiện tổng hợp thiết kế trang web</h1>
 
-    <pre>
+    <div class="section">
+        <div class="section-title">📘 Luyện tập 1</div>
+        <div class="section-content">
 Luyện tập 1 trang 105 Tin học 12: Tạo trang dang_ki.html chứa biểu mẫu đăng kí câu lạc bộ và bổ sung liên kết tới trang dang_ki trong phần cuối trang của tất cả các trang.
 Lời giải:
 Để tạo trang "dang_ki.html" chứa biểu mẫu đăng kí câu lạc bộ và bổ sung liên kết tới trang "dang_ki" trong phần cuối trang của tất cả các trang, em có thể làm như sau:
@@ -77,10 +89,20 @@ Lời giải:
 - Trong tệp tin "dang_ki.html", tạo biểu mẫu đăng kí câu lạc bộ bằng cách sử dụng các phần tử HTML như <form>, <input>, và <button>. Thiết kế biểu mẫu theo yêu cầu của em, bao gồm các trường nhập thông tin và nút gửi đăng kí.
 - Sau khi hoàn thành biểu mẫu, em có thể thêm CSS để định dạng giao diện biểu mẫu theo ý muốn. Sử dụng các lớp CSS để tạo kiểu cho các phần tử trong biểu mẫu.
 - Sau khi tạo xong trang "dang_ki.html", em cần bổ sung liên kết tới trang "dang_ki" trong phần cuối trang của tất cả các trang khác trong website.
+        </div>
+    </div>
 
+    <div class="section">
+        <div class="section-title">📘 Luyện tập 2</div>
+        <div class="section-content">
 Luyện tập 2 trang 105 Tin học 12: Thay đổi định dạng và màu sắc của phông chữ trong các vùng khi di chuyển chuột qua.
 Để thay đổi định dạng và màu sắc của phông chữ trong các vùng khi di chuyển chuột qua, em có thể sử dụng hiệu ứng hover trong CSS.
+        </div>
+    </div>
 
+    <div class="section">
+        <div class="section-title">📝 Vận dụng</div>
+        <div class="section-content">
 Vận dụng trang 105 Tin học 12: Hãy đưa ra một thiết kế khác cho website đã tạo ở phần Thực hành. Viết định dạng theo thiết kế mới và chuyển toàn bộ website sang định dạng mới.
 Lời giải:
 Để áp dụng thiết kế mới cho trang web đã tạo trong phần Thực hành, em cần thực hiện các bước sau:
@@ -128,7 +150,8 @@ Ví dụ:
   font-size: 16px;
   color: #333;
 }
-    </pre>
+        </div>
+    </div>
 
     <a href="index.html">← Quay lại trang chính</a>
 
