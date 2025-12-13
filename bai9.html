@@ -5,130 +5,143 @@
     <title>Bài 9: Tạo danh sách, bảng</title>
 
     <!-- FONT COMFORTAA -->
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
-            font-family: 'Comfortaa', sans-serif;
-            background: #EAF6FF;
+            font-family: "Comfortaa", sans-serif;
+            background: linear-gradient(135deg, #EAF6FF, #D7E8FF);
             margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: #ffffff;
             padding: 50px;
+            border-radius: 18px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.25);
         }
 
         h1 {
             text-align: center;
-            font-size: 45px;
-            margin-bottom: 35px;
-        }
-
-        .block {
-            background: #fff;
-            border: 3px solid #007BFF;
-            border-radius: 18px;
-            padding: 25px 30px;
-            margin-bottom: 30px;
-            font-size: 22px;
-            line-height: 1.9;
-        }
-
-        .title {
-            font-size: 28px;
+            font-size: 38px;
+            color: #004E8F;
             font-weight: 700;
-            color: #0056d6;
-            margin-bottom: 15px;
+            margin-bottom: 40px;
         }
 
-        a {
+        .section {
+            background: #F6FAFF;
+            border-left: 8px solid #4A8FE7;
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            border-radius: 14px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #003B73;
+            margin-bottom: 18px;
+        }
+
+        .section-content {
+            font-size: 20px;
+            line-height: 2;
+        }
+
+        pre {
+            background: #ffffff;
+            border: 2px dashed #9bbcf3;
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 18px;
+            overflow-x: auto;
+            margin-top: 18px;
+        }
+
+        a.back-btn {
             display: inline-block;
-            font-size: 22px;
             margin-top: 40px;
+            font-size: 22px;
             text-decoration: none;
-            font-weight: bold;
-            color: #007BFF;
+            font-weight: 700;
+            color: #ffffff;
+            background: #007BFF;
+            padding: 14px 30px;
+            border-radius: 10px;
+            transition: 0.25s;
+        }
+
+        a.back-btn:hover {
+            background: #0056c9;
+            transform: translateX(-4px);
         }
     </style>
 </head>
 
 <body>
 
+<div class="container">
+
     <h1>Bài 9: Tạo danh sách, bảng</h1>
 
-    <!-- ▶ Luyện tập -->
-    <div class="block">
-        <div class="title">Luyện tập trang 56 Tin học 12:</div>
-        <pre>
-Sửa lại chương trình trong Hình 9.5a, sử dụng thuộc tính Style thay vì thuộc tính border để tạo viền cho bảng. 
-Sử dụng màu xanh cho viền của ô hai dòng đầu bảng và sử dụng 3 màu đỏ, vàng, xanh cho ba chữ Toán, Vật lý và Hóa học.
+    <div class="section">
+        <div class="section-title">📘 Luyện tập trang 56 – Tin học 12</div>
+        <div class="section-content">
+            Sửa lại chương trình trong Hình 9.5a, sử dụng thuộc tính <b>style</b> thay vì thuộc tính <b>border</b> để tạo viền cho bảng.
+            Sử dụng màu xanh cho viền của ô hai dòng đầu bảng và sử dụng 3 màu đỏ, vàng, xanh cho ba chữ Toán, Vật lý và Hóa học.
 
-Lời giải:
-<table style="border-collapse: collapse;">
-  <tr>
-    <th rowspan="2" style="border: 2px solid blue;">Họ tên</th>
-    <th rowspan="3" style="border: 2px solid blue;">Điểm thi</th>
-  </tr>
-  <tr>
-    <td style="border: 2px solid red;">Toán</td>
-    <td style="border: 2px solid yellow;">Vật lí</td>
-    <td style="border: 2px solid green;">Hóa học</td>
-  </tr>
-</table>
-        </pre>
+            <pre>
+&lt;table style="border-collapse: collapse;"&gt;
+  &lt;tr&gt;
+    &lt;th rowspan="2" style="border: 2px solid blue;"&gt;Họ tên&lt;/th&gt;
+    &lt;th rowspan="2" style="border: 2px solid blue;"&gt;Điểm thi&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style="border: 2px solid red;"&gt;Toán&lt;/td&gt;
+    &lt;td style="border: 2px solid yellow;"&gt;Vật lí&lt;/td&gt;
+    &lt;td style="border: 2px solid green;"&gt;Hóa học&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+            </pre>
+        </div>
     </div>
 
-    <!-- ▶ Vận dụng -->
-    <div class="block">
-        <div class="title">Vận dụng trang 56 Tin học 12:</div>
-        <pre>
-Cho trước một bảng dữ liệu cỡ nx4, mỗi hàng tương ứng với một bộ (họ tên, điểm Toán, điểm Vật lý, điểm Hóa học) viết chương trình Python để tạo ra tệp HTML thực hiện việc vẽ bảng tương tự như Hình 9.5 và bổ sung dữ liệu vào các hàng phía dưới.
+    <div class="section">
+        <div class="section-title">🎯 Vận dụng trang 56 – Tin học 12</div>
+        <div class="section-content">
+            Cho trước một bảng dữ liệu cỡ <b>n × 4</b>, mỗi hàng tương ứng với một bộ
+            (họ tên, điểm Toán, điểm Vật lý, điểm Hóa học).  
+            Viết chương trình Python để tạo tệp HTML vẽ bảng và bổ sung dữ liệu.
 
-Lời giải:
+            <pre>
 def generate_html_table(data):
-    html_content = "<table style=\"border-collapse: collapse;\">"
-    # Thêm tiêu đề cho bảng
-    html_content += "<tr>"
-    html_content += "<th style=\"border: 2px solid blue;\">Họ tên</th>"
-    html_content += "<th style=\"border: 2px solid blue;\">Điểm Toán</th>"
-    html_content += "<th style=\"border: 2px solid blue;\">Điểm Vật lí</th>"
-    html_content += "<th style=\"border: 2px solid blue;\">Điểm Hóa học</th>"
-    html_content += "</tr>"
-    # Thêm dữ liệu từ list data vào bảng
+    html_content = "&lt;table style='border-collapse: collapse;'&gt;"
+    html_content += "&lt;tr&gt;"
+    html_content += "&lt;th style='border:2px solid blue;'&gt;Họ tên&lt;/th&gt;"
+    html_content += "&lt;th style='border:2px solid blue;'&gt;Điểm Toán&lt;/th&gt;"
+    html_content += "&lt;th style='border:2px solid blue;'&gt;Điểm Vật lí&lt;/th&gt;"
+    html_content += "&lt;th style='border:2px solid blue;'&gt;Điểm Hóa học&lt;/th&gt;"
+    html_content += "&lt;/tr&gt;"
+
     for row in data:
-        html_content += "<tr>"
+        html_content += "&lt;tr&gt;"
         for value in row:
-            html_content += f"<td style=\"border: 2px solid black;\">{value}</td>"
-        html_content += "</tr>"
-    html_content += "</table>"
+            html_content += f"&lt;td style='border:2px solid black;'&gt;{value}&lt;/td&gt;"
+        html_content += "&lt;/tr&gt;"
+
+    html_content += "&lt;/table&gt;"
     return html_content
-
-# Dữ liệu ban đầu
-initial_data = [
-    ["Họ tên", "Điểm Toán", "Điểm Vật lí", "Điểm Hóa học"],
-    ["Nguyễn Văn A", "8.5", "7.0", "9.0"],
-    ["Trần Thị B", "7.0", "8.0", "8.5"]
-]
-
-# Dữ liệu mới cần bổ sung
-new_data = [
-    ["Lê Quang C", "6.5", "7.5", "8.0"],
-    ["Phạm Thị D", "9.0", "8.5", "7.5"]
-]
-
-# Kết hợp dữ liệu cũ và mới
-combined_data = initial_data + new_data
-
-# Tạo nội dung HTML cho bảng dữ liệu
-html_content = generate_html_table(combined_data)
-
-# Lưu nội dung HTML vào tệp
-with open("data_table.html", "w") as file:
-    file.write(html_content)
-
-print("Tạo tệp HTML thành công!")
-        </pre>
+            </pre>
+        </div>
     </div>
 
-    <a href="index.html">← Quay lại trang chính</a>
+    <a href="index.html" class="back-btn">← Quay lại trang chính</a>
+
+</div>
 
 </body>
-
 </html>
