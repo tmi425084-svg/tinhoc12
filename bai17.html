@@ -9,7 +9,7 @@
 
     <style>
         body {
-            font-family: 'Comfortaa', cursive;
+            font-family: "Comfortaa", sans-serif;
             background: linear-gradient(135deg, #EAF6FF, #D7E8FF);
             margin: 0;
             padding: 40px;
@@ -18,57 +18,58 @@
         .container {
             max-width: 1100px;
             margin: auto;
-            background: #fff;
-            padding: 45px;
-            border-radius: 14px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 18px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.25);
         }
 
         h1 {
-            margin-top: 0;
             text-align: center;
-            font-size: 36px;
+            font-size: 40px;
             color: #004E8F;
-            letter-spacing: 1px;
-            font-weight: bold;
+            font-weight: 700;
+            margin-bottom: 40px;
         }
 
-        /* KHỐI NỘI DUNG CODE */
-        pre {
-            background: #f9fbff;
-            border-left: 6px solid #4A8FE7;
-            padding: 22px;
+        .section {
+            background: #F6FAFF;
+            border-left: 8px solid #4A8FE7;
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            border-radius: 14px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #003B73;
+            margin-bottom: 16px;
+        }
+
+        .section-content {
             font-size: 20px;
-            line-height: 1.9;
+            line-height: 2;
             white-space: pre-wrap;
-            overflow-wrap: break-word;
-            border-radius: 10px;
         }
 
         a {
             display: inline-block;
-            margin-top: 35px;
+            margin-top: 40px;
             font-size: 22px;
             text-decoration: none;
-            font-weight: bold;
-            color: white;
-            background: #007bff;
-            padding: 12px 26px;
-            border-radius: 8px;
+            font-weight: 700;
+            color: #ffffff;
+            background: #007BFF;
+            padding: 14px 30px;
+            border-radius: 10px;
             transition: 0.25s;
         }
 
         a:hover {
             background: #0056c9;
-            transform: scale(1.03);
+            transform: translateX(-4px);
         }
-
     </style>
 </head>
 
@@ -78,7 +79,9 @@
 
     <h1>Bài 17</h1>
 
-    <pre>
+    <div class="section">
+        <div class="section-title">📘 Câu 1</div>
+        <div class="section-content">
 Câu 1: Giải thích sự khác nhau giữa hai định dạng sau:
 
 Hai định dạng CSS "#p123+ p" và "h2#p123 + p" khác nhau về cách chọn phần tử HTML để áp dụng định dạng.
@@ -91,9 +94,12 @@ Trong trường hợp này, định dạng CSS "#p123+ p" sẽ áp dụng cho ph
 - "h2#p123 + p": Đây là một selector có kết hợp giữa element selector (h2), ID selector và sibling combinator. Nó chọn các phần tử p là anh em liền kề của phần tử h2 có ID là "p123".
 
 Trong trường hợp này, định dạng CSS "h2#p123 + p" sẽ áp dụng cho phần tử p thứ hai, vì nó là anh em liền kề của phần tử h2 có ID là "p123".
+        </div>
+    </div>
 
----
-
+    <div class="section">
+        <div class="section-title">📝 Câu 2</div>
+        <div class="section-content">
 Câu 2: Trong phần Thực hành, các tên riêng (tên người, tên tổ chức) cần được bổ sung định dạng đóng khung và in nghiêng. Em sẽ thực hiện các yêu cầu này như thế nào?
 
 .name {
@@ -102,7 +108,8 @@ Câu 2: Trong phần Thực hành, các tên riêng (tên người, tên tổ ch
   padding: 2px; /* Thêm đệm xung quanh nội dung để không quá sát viền */
   display: inline-block; /* Đảm bảo viền ôm sát nội dung */
 }
-    </pre>
+        </div>
+    </div>
 
     <a href="index.html">← Quay lại trang chính</a>
 
